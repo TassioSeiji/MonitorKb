@@ -1,1 +1,83 @@
+.barraMenuHeader {
+    border-bottom: 1px solid;
+    border-color: rgb(171, 171, 171);
+}
 
+.grave {
+    color: red;
+}
+
+.medio {
+    color: yellow;
+}
+
+.fraco {
+    color: blue;
+}
+
+.todos {
+    color: gray;
+}
+
+.criticidadeAlert {
+    border: 1px solid;
+    border-radius: 30px;
+    padding: 7px;
+    font-size: 13px;
+}
+
+.topo {
+    margin-top: 3%;
+    align-content: center;
+}
+
+.colunaFiltro {
+    align-content: center;
+}
+
+.numerosDoCardAlinhamento {
+    text-align: right;
+    padding-top: 9%;
+    margin-bottom: 5%;
+}
+
+.numerosDoCardAlinhamentoPadding {
+    padding-right: 10px;
+    background-color: red;
+}
+
+.numerosDoCard {
+    background-color: rgb(255, 255, 255);
+    font-size: 13px;
+    color: red;
+    border: 1px solid;
+    border-radius: 30px;
+    padding: 7px;
+}
+
+.numerosCard {
+    margin-right: 7px;
+}
+
+.conteudoDoCard {
+    color: white;
+    background-color: red;
+}
+
+.tituloDoCard {
+    font-size: 20px;
+    padding-left: 9%;
+    color: white;
+    background-color: red;
+}
+
+.alinhamentoDoFiltro {
+    padding: 0;
+    padding-right: 0%;
+    display: contents;
+}
+
+.filtroAlinhamento {
+    margin-right: -45px;
+    padding: 0;
+}
