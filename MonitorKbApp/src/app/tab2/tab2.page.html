@@ -1,9 +1,91 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Tab Two
-    </ion-title>
-  </ion-toolbar>
+    <ion-toolbar color="primary">
+        <ion-grid>
+            <ion-row>
+                <ion-title>
+                    VIC KB
+                </ion-title>
+                <ion-button fill="clear">
+                    <ion-icon name="create" color="light"></ion-icon>
+                </ion-button>
+                <ion-button fill="clear">
+                    <ion-icon name="exit" color="light"></ion-icon>
+                </ion-button>
+            </ion-row>
+        </ion-grid>
+    </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content color="tertiary">
+    <div class="barraMenuHeader">
+        <ion-grid>
+            <ion-row class="ion-text-center">
+                <ion-col>
+                    <ion-text color="secondary">
+
+                        <a>Produto Contábil</a>
+
+                    </ion-text>
+                </ion-col>
+                <ion-col>
+                    <ion-text color="secondary">
+
+                        <a>Cobrança</a>
+
+                    </ion-text>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+    <div class="topo">
+        <ion-grid>
+            <ion-row>
+                <div class="contadorDeCasos">
+                    <ion-col>
+                        <ion-text class="grave criticidadeAlert">
+                            32
+                        </ion-text>
+                    </ion-col>
+                    <ion-col>
+                        <ion-text class="medio criticidadeAlert">
+                            07
+                        </ion-text>
+                    </ion-col>
+
+                    <ion-col>
+                        <ion-text class="fraco criticidadeAlert">
+                            04
+                        </ion-text>
+                    </ion-col>
+
+                    <ion-col>
+                        <ion-text class="todos criticidadeAlert">
+                            43
+                        </ion-text>
+                    </ion-col>
+                </div>
+            </ion-row>
+        </ion-grid>
+    </div>
+    <div class="cardsTela">
+        <ion-row>
+            <ion-col size="6">
+                <ion-card class="cardsTela">
+                    <ion-header translucent>
+                        <ion-toolbar>
+                            <ion-title class="numerosDoCardAlinhamentoPadding">
+                                <div class="numerosDoCardAlinhamento">
+                                    <a class="numerosDoCard">08</a>
+                                </div>
+                            </ion-title>
+                            <ion-card-subtitle class="tituloDoCard">eSeg/KB</ion-card-subtitle>
+                            <ion-card-content class="conteudoDoCard">
+                                Registro existe no eseg e não existe no KB
+                            </ion-card-content>
+                        </ion-toolbar>
+                    </ion-header>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+    </div>
+</ion-content>
