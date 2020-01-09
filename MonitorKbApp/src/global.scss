@@ -28,25 +28,64 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+.topoFiltroECriticidade {
+    padding-top: 9px;
+    padding-left: 8px;
+    padding-bottom: 26px;
+    margin-top: 3%;
+    align-content: center;
+}
+
+.toolbarTopo {
+    padding-bottom: 0px;
+}
+
+.headerPrincipal {
+    background-color: #4D5467;
+    height: 11%;
+}
+
+.conteudoPage {
+    background-color: #EFF3F6;
+}
+
+.logoHeaderPrincipal {
+    font-size: 28px;
+    padding-top: 25%;
+}
+
+.logoHeader {
+    padding-left: 25px;
+    border: 1.7px solid;
+    margin-right: 146px;
+    border-radius: 65px;
+    margin-left: 14px;
+    margin-top: 8px;
+    margin-bottom: -5px;
+}
+
 .barraMenuHeader {
     border-bottom: 1px solid;
     border-color: rgb(171, 171, 171);
+    padding-top: 5%;
+    font-weight: bold;
+    padding-bottom: 2%;
 }
 
 .grave {
-    color: red;
+    color: #CC4556;
 }
 
 .medio {
-    color: yellow;
+    color: #FAC862;
 }
 
 .fraco {
-    color: blue;
+    color: #3A7397;
 }
 
 .todos {
-    color: gray;
+    color: #707070;
 }
 
 .criticidadeAlert {
@@ -54,4 +93,37 @@
     border-radius: 30px;
     padding: 7px;
     font-size: 13px;
+}
+
+//* CSS DOS CARDS ---------------------------------------------------------------- COM SUAS CORES *//
+.numerosDoCardAlinhamento {
+    text-align: right;
+    padding-top: 9%;
+    margin-bottom: 5%;
+}
+
+.numerosDoCardAlinhamentoPadding {
+    padding-right: 10px;
+}
+
+.numerosDoCard {
+    background-color: rgb(255, 255, 255);
+    font-size: 13px;
+    border: 1px solid;
+    border-radius: 30px;
+    padding: 7px;
+}
+
+.numerosCard {
+    margin-right: 7px;
+}
+
+.conteudoDoCard {
+    color: white;
+}
+
+.tituloDoCard {
+    font-size: 20px;
+    padding-left: 9%;
+    color: white;
 }
