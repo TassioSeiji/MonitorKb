@@ -9,18 +9,49 @@
  * https://ionicframework.com/docs/layout/global-stylesheets
  */
 
+
 /* Core CSS required for Ionic components to work properly */
+
 @import "~@ionic/angular/css/core.css";
 
 /* Basic CSS for apps built with Ionic */
+
 @import "~@ionic/angular/css/normalize.css";
 @import "~@ionic/angular/css/structure.css";
 @import "~@ionic/angular/css/typography.css";
 @import '~@ionic/angular/css/display.css';
 
 /* Optional CSS utils that can be commented out */
+
 @import "~@ionic/angular/css/padding.css";
 @import "~@ionic/angular/css/float-elements.css";
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+.barraMenuHeader {
+    border-bottom: 1px solid;
+    border-color: rgb(171, 171, 171);
+}
+
+.grave {
+    color: red;
+}
+
+.medio {
+    color: yellow;
+}
+
+.fraco {
+    color: blue;
+}
+
+.todos {
+    color: gray;
+}
+
+.criticidadeAlert {
+    border: 1px solid;
+    border-radius: 30px;
+    padding: 7px;
+    font-size: 13px;
+}
