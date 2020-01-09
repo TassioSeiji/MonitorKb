@@ -1,41 +1,82 @@
 <ion-header>
-    <ion-toolbar>
-        <ion-title>
-            VIC KB
+  <ion-toolbar color="dark">
+    <ion-grid>
+      <ion-row>
+        <ion-title class="titulo">
+          VIC KB
         </ion-title>
-    </ion-toolbar>
+        <ion-button fill="clear">
+          <ion-icon class="botaonavbar" name="exit"></ion-icon>
+        </ion-button>
+        <ion-button fill="clear">
+          <ion-icon class="botaonavbar" name="create"></ion-icon>
+        </ion-button>
+
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content>
-    <ion-card class="welcome-card">
-        <img src="/assets/shapes.svg" alt="" />
-        <ion-card-header>
-            <ion-card-subtitle>Get Started</ion-card-subtitle>
-            <ion-card-title>Welcome to Ionic</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-            <p>Now that your app has been created, you'll want to start building out features and components. Check out some of the resources below for next steps.</p>
-        </ion-card-content>
-    </ion-card>
-    <ion-list lines="none">
-        <ion-list-header>
-            <ion-label>Resources</ion-label>
-        </ion-list-header>
-        <ion-item href="https://ionicframework.com/docs/">
-            <ion-icon slot="start" color="medium" name="book"></ion-icon>
-            <ion-label>Ionic Documentation</ion-label>
-        </ion-item>
-        <ion-item href="https://ionicframework.com/docs/building/scaffolding">
-            <ion-icon slot="start" color="medium" name="build"></ion-icon>
-            <ion-label>Scaffold Out Your App</ion-label>
-        </ion-item>
-        <ion-item href="https://ionicframework.com/docs/layout/structure">
-            <ion-icon slot="start" color="medium" name="grid"></ion-icon>
-            <ion-label>Change Your App Layout</ion-label>
-        </ion-item>
-        <ion-item href="https://ionicframework.com/docs/theming/basics">
-            <ion-icon slot="start" color="medium" name="color-fill"></ion-icon>
-            <ion-label>Theme Your App</ion-label>
-        </ion-item>
-    </ion-list>
+  <div>
+    <ion-row class="menuPrincipal">
+      <ion-col size="6">
+        <ion-text>Produto Contábil</ion-text>
+      </ion-col>
+      <ion-col>
+        <ion-text>
+          Cobrança
+        </ion-text>
+      </ion-col>
+    </ion-row>
+  </div>
+
+
+
+  <ion-row class="filtro">
+    <ion-col size="2">
+      <ion-text class="numMenuGrave menuCriticidade"> 32 </ion-text>
+    </ion-col>
+    <ion-col size="2">
+      <ion-text class="numMenuMedio menuCriticidade"> 07 </ion-text>
+    </ion-col>
+    <ion-col size="2">
+      <ion-text class="numMenuFraco menuCriticidade"> 04 </ion-text>
+    </ion-col>
+    <ion-col size="2">
+      <ion-text class="numMenuTodos menuCriticidade"> 43 </ion-text>
+    </ion-col>
+    <ion-col size="4">
+      <ion-button class="btntodos">
+        fdgds
+      </ion-button>
+    </ion-col>
+  </ion-row>
+
+  <ion-content>
+  <ion-row>
+  <ion-col>
+      <ion-card size = "6" class="cardGrave">
+        <div class="numCardCanto">
+          04
+        </div>
+        <div class="msgCardEmcima">
+          Ja encaminhada
+        </div>
+        <h4 class="cardTitle"> eSeg/KB </h4>
+        <ion-text class="cardText">
+          Registro existe no seg e não existe no KB
+        </ion-text>
+      </ion-card>
+    </ion-col>
+    <ion-col size="6">
+      <ion-card class="cardMedio">
+        <ion-title>  </ion-title>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+
+
+
+
 </ion-content>
