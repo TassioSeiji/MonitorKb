@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { AlertController } from '@ionic/angular';
+import { ModalService } from '../services/modal-service/modal.service'
+import { AotCompiler } from '@angular/compiler';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab2',
@@ -8,13 +11,14 @@ import { AlertController } from '@ionic/angular';
 })
 export class Tab2Page {
 
-  constructor(public alertController : AlertController) {}
-  async alerta(){
-  const alert = await this.alertController.create({
-    header: ' O Que Deseja ? ',
-    buttons:[],
-  })
-  await alert.present();
+  constructor( public router: Router) {}
+
+  ProdutoContabil() {   
+    this.router.navigate(['tabs', 'tab1', {      
+    }]);        
+  } 
 }
-}
+
+
+
 

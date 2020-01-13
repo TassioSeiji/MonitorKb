@@ -213,103 +213,52 @@
     margin-top: 18px;
 }
 
+.textAreaForm {
+    width: 266px;
+    height: 105px;
+}
+
 .btnSalvar {
     background: transparent;
     color: #4D5467;
-    border: solid 1px #4D5467;
-    border-radius: 42px;
-    padding-bottom: 5px;
-    padding-top: 5px;
-    padding-left: 15px;
-    padding-right: 15px;
+    border: solid 2px #4D5467;
+    border-radius: 52px;
+    width: 35%;
+    font-weight: 600;
 }
 
 .espacoBtnSalvar {
     text-align: center;
 }
 
-.textAreaForm {
-    width: 266px;
-    height: 105px;
+.textBtnSalvar {
+    color: #4D5467;
+    padding-right: 13px;
+    text-transform: none;
+    padding-right: 11px;
+}
+
+.iconeBtnSalvar {
+    color: #4D5467;
+    font-size: 20px;
+    padding-left: 5px;
 }
 
 // DROPDOWN ------------------------------------------------------------ //
 .navBar {
+    border: 2px solid;
+    color: #4d5467;
     margin-top: -16px;
-    margin-left: 62px;
+    margin-left: 43px;
     width: 75%;
     overflow: hidden;
     font-family: Arial;
     background: transparent;
-}
-
-.navBar a {
-    margin-top: 9px;
-    float: left;
-    text-align: center;
-    margin-left: -9px;
-    padding: 0px;
-    text-decoration: none;
+    border-radius: 33px;
 }
 
 .dropdown {
     width: 135px;
     float: left;
     overflow: hidden;
-}
-
-.dropdown .dropBtn {
-    font-size: 16px;
-    border: 2px solid #707070;
-    border-radius: 60px;
-    outline: none;
-    color: #707070;
-    padding-left: 30px;
-    padding-right: 4px;
-    padding-bottom: 0px;
-    background-color: inherit;
-    font-family: inherit;
-    margin: 0;
-    width: 100%;
-}
-
-.textoDropdown {
-    font-size: 20px;
-    padding-top: 12px;
-    color: #707070;
-    padding-right: 6px;
-}
-
-.iconeDropdown {
-    font-size: 37px;
-    color: #707070;
-    padding-left: 7px;
-}
-
-.dropdownConteudo {
-    display: none;
-    border: 2px solid #AFAFAF;
-    position: absolute;
-    width: 58%;
-    border-radius: 28px;
-    background-color: #f9f9f9;
-    min-width: 136px;
-    z-index: 24;
-    padding-bottom: 14px;
-    padding-top: 10px;
-}
-
-.dropdownConteudo a {
-    font-size: 21px;
-    float: none;
-    color: #AFAFAF;
-    padding: 0;
-    padding-left: 34px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-}
-
-.dropdown:hover .dropdownConteudo {
-    display: block;
 }
