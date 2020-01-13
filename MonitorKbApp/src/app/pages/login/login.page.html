@@ -1,0 +1,53 @@
+<ion-content padding>
+  <ion-row>
+    <ion-button (click)="closeModal()" fill="clear" class="close-btn" no-padding>
+      <ion-icon name="arrow-back"></ion-icon>
+    </ion-button>
+  </ion-row>
+
+  <div class="container">
+    <div class="ion-text-center logo">
+      <!-- <img src="../assets/votorantim.jpg" /> -->
+    </div>
+
+    <form [formGroup]="loginForm" (submit)="login()" class="login-form" padding>
+      <ion-row>        
+          <mat-form-field appearance="outline">
+            <mat-label>E-mail</mat-label>
+            <input matInput placeholder="E-mail" type="email" formControlName="user" maxlength="100" required
+              [class.ion-invalid]="loginForm.controls['user'].hasError('required')&&loginForm.value.user!=''&&loginForm.value.user!=undefined">           
+          </mat-form-field>        
+      </ion-row>
+      <ion-row>        
+          <mat-form-field appearance="outline">
+            <mat-label>Senha</mat-label>
+            <input matInput placeholder="Senha" type="password" formControlName="password" maxlength="100" required
+              [class.ion-invalid]="loginForm.controls['user'].hasError('required')&&loginForm.value.user!=''&&loginForm.value.user!=undefined">           
+          </mat-form-field>        
+      </ion-row>
+      <button type="submit" style="visibility: hidden"></button>
+      <br>
+      <br>
+      <div text-center class="btn-container">
+        <ion-button expand="block" size="large" fill="solid" shape="round" class="btn-rounded btn-green" type="submit"
+          (keyup.enter)="login()">
+          Entrar</ion-button>        
+      </div>
+    </form>
+    <!-- 
+    <div  padding class="ion-text-center">
+      <re-captcha (resolved)="captchaResolved($event)" siteKey="{{captchaSiteKey}}"></re-captcha>
+    </div> -->
+
+    <!-- <br />
+
+    <div class="ion-text-center forgot">
+      <a (click)="forgotPassword()">
+        {{"login.forgot-password"}}
+      </a>
+    </div> -->
+
+    <br />
+  </div>
+
+</ion-content>

@@ -1,5 +1,7 @@
 {
   "name": "MonitorKbApp",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
