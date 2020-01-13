@@ -17,26 +17,33 @@
 </ion-header>
 
 <ion-content color="tertiary">
-    <div class="barraMenuHeader">
+    <div class="barraMenuHeader cobrancaBorda">
         <ion-grid>
             <ion-row class="ion-text-center">
                 <ion-col>
-                    <ion-text color="secondary">
+                    <ion-button fill="clear">
+                        <ion-text color="secondary">
 
-                        <a>Produto Contábil</a>
+                            <a class="txtMenuHeader">Produto Contábil</a>
 
-                    </ion-text>
+                        </ion-text>
+
+                    </ion-button>
                 </ion-col>
                 <ion-col>
-                    <ion-text color="secondary">
+                    <ion-button fill="clear">
+                        <ion-text color="secondary">
 
-                        <a>Cobrança</a>
+                            <a class="txtMenuHeader">Cobrança</a>
 
-                    </ion-text>
+                        </ion-text>
+
+                    </ion-button>
                 </ion-col>
             </ion-row>
         </ion-grid>
     </div>
+
     <div class="topoFiltroECriticidade">
         <ion-grid>
             <ion-row>
@@ -60,13 +67,13 @@
                     <div class="navBar">
                         <div class="dropdown">
                             <button class="dropBtn"><a class="textoDropdown">Todos</a>
-                            <ion-icon class="iconeDropdown" name="arrow-dropdown" md="ios-arrow-dropdown"></ion-icon>
-                            <i class="fa fa-caret-down"></i>
-                          </button>
+                      <ion-icon class="iconeDropdown" name="arrow-dropdown" md="ios-arrow-dropdown"></ion-icon>
+                      <i class="fa fa-caret-down"></i>
+                    </button>
                             <div class="dropdownConteudo">
                                 <a>Grave</a>
                                 <a>Médio</a>
-                                <a>Fraco</a>s
+                                <a>Fraco</a>
                             </div>
                         </div>
                     </div>
@@ -74,148 +81,21 @@
             </ion-row>
         </ion-grid>
     </div>
+
+
     <div class="cardsTela">
         <ion-row>
             <ion-col size="6">
-                <ion-card class="cardsTela">
+                <ion-card (click)="alerta()" class="cardsTela">
                     <ion-header translucent>
                         <ion-toolbar>
-                            <ion-title class="numerosDoCardAlinhamentoPadding">
-                                <div class="numerosDoCardAlinhamento">
-                                    <a class="numerosDoCard">08</a>
+                            <ion-title class="numerosDoCardAlinhamentoPadding backgroundGrave">
+                                <div class="numerosDoCardAlinhamento ">
+                                    <a class="numerosDoCard grave ">08</a>
                                 </div>
                             </ion-title>
-                            <ion-card-subtitle class="tituloDoCard">eSeg/KB</ion-card-subtitle>
-                            <ion-card-content class="conteudoDoCard">
-                                Registro existe no eseg e não existe no KB
-                            </ion-card-content>
-                        </ion-toolbar>
-                    </ion-header>
-                </ion-card>
-            </ion-col>
-
-            <ion-col size="6">
-                <ion-card class="cardsTela">
-                    <ion-header translucent>
-                        <ion-toolbar>
-                            <ion-title class="numerosDoCardAlinhamentoPadding">
-                                <div class="numerosDoCardAlinhamento">
-                                    <a class="numerosDoCard">08</a>
-                                </div>
-                            </ion-title>
-                            <ion-card-subtitle class="tituloDoCard">eSeg/KB</ion-card-subtitle>
-                            <ion-card-content class="conteudoDoCard">
-                                Registro existe no eseg e não existe no KB
-                            </ion-card-content>
-                        </ion-toolbar>
-                    </ion-header>
-                </ion-card>
-            </ion-col>
-        </ion-row>
-        <ion-row>
-            <ion-col size="6">
-                <ion-card class="cardsTela">
-                    <ion-header translucent>
-                        <ion-toolbar>
-                            <ion-title class="numerosDoCardAlinhamentoPadding">
-                                <div class="numerosDoCardAlinhamento">
-                                    <a class="numerosDoCard">08</a>
-                                </div>
-                            </ion-title>
-                            <ion-card-subtitle class="tituloDoCard">eSeg/KB</ion-card-subtitle>
-                            <ion-card-content class="conteudoDoCard">
-                                Registro existe no eseg e não existe no KB
-                            </ion-card-content>
-                        </ion-toolbar>
-                    </ion-header>
-                </ion-card>
-            </ion-col>
-
-            <ion-col size="6">
-                <ion-card class="cardsTela">
-                    <ion-header translucent>
-                        <ion-toolbar>
-                            <ion-title class="numerosDoCardAlinhamentoPadding">
-                                <div class="numerosDoCardAlinhamento">
-                                    <a class="numerosDoCard">08</a>
-                                </div>
-                            </ion-title>
-                            <ion-card-subtitle class="tituloDoCard">eSeg/KB</ion-card-subtitle>
-                            <ion-card-content class="conteudoDoCard">
-                                Registro existe no eseg e não existe no KB
-                            </ion-card-content>
-                        </ion-toolbar>
-                    </ion-header>
-                </ion-card>
-            </ion-col>
-        </ion-row>
-        <ion-row>
-            <ion-col size="6">
-                <ion-card class="cardsTela">
-                    <ion-header translucent>
-                        <ion-toolbar>
-                            <ion-title class="numerosDoCardAlinhamentoPadding">
-                                <div class="numerosDoCardAlinhamento">
-                                    <a class="numerosDoCard">08</a>
-                                </div>
-                            </ion-title>
-                            <ion-card-subtitle class="tituloDoCard">eSeg/KB</ion-card-subtitle>
-                            <ion-card-content class="conteudoDoCard">
-                                Registro existe no eseg e não existe no KB
-                            </ion-card-content>
-                        </ion-toolbar>
-                    </ion-header>
-                </ion-card>
-            </ion-col>
-
-            <ion-col size="6">
-                <ion-card class="cardsTela">
-                    <ion-header translucent>
-                        <ion-toolbar>
-                            <ion-title class="numerosDoCardAlinhamentoPadding">
-                                <div class="numerosDoCardAlinhamento">
-                                    <a class="numerosDoCard">08</a>
-                                </div>
-                            </ion-title>
-                            <ion-card-subtitle class="tituloDoCard">eSeg/KB</ion-card-subtitle>
-                            <ion-card-content class="conteudoDoCard">
-                                Registro existe no eseg e não existe no KB
-                            </ion-card-content>
-                        </ion-toolbar>
-                    </ion-header>
-                </ion-card>
-            </ion-col>
-        </ion-row>
-        <ion-row>
-            <ion-col size="6">
-                <ion-card class="cardsTela">
-                    <ion-header translucent>
-                        <ion-toolbar>
-                            <ion-title class="numerosDoCardAlinhamentoPadding">
-                                <div class="numerosDoCardAlinhamento">
-                                    <a class="numerosDoCard">08</a>
-                                </div>
-                            </ion-title>
-                            <ion-card-subtitle class="tituloDoCard">eSeg/KB</ion-card-subtitle>
-                            <ion-card-content class="conteudoDoCard">
-                                Registro existe no eseg e não existe no KB
-                            </ion-card-content>
-                        </ion-toolbar>
-                    </ion-header>
-                </ion-card>
-            </ion-col>
-
-            <ion-col size="6">
-                <ion-card class="cardsTela">
-                    <ion-header translucent>
-                        <ion-toolbar>
-                            <ion-title class="numerosDoCardAlinhamentoPadding">
-                                <div class="numerosDoCardAlinhamento">
-                                    <a class="numerosDoCard">08</a>
-                                </div>
-                            </ion-title>
-                            <ion-card-subtitle class="tituloDoCard">eSeg/KB</ion-card-subtitle>
-                            <ion-card-content class="conteudoDoCard">
+                            <ion-card-subtitle class="tituloDoCard grave backgroundGrave">eSeg/KB</ion-card-subtitle>
+                            <ion-card-content class="conteudoDoCard grave backgroundGrave">
                                 Registro existe no eseg e não existe no KB
                             </ion-card-content>
                         </ion-toolbar>
@@ -224,4 +104,8 @@
             </ion-col>
         </ion-row>
     </div>
+
+
+
+
 </ion-content>
