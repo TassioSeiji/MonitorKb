@@ -31,7 +31,7 @@
 .topoFiltroECriticidade {
     padding-top: 9px;
     padding-left: 8px;
-    padding-bottom: 26px;
+    padding-bottom: 10px;
     margin-top: 3%;
     align-content: center;
 }
@@ -74,25 +74,31 @@
 }
 
 .logoHeader {
-    padding-left: 25px;
+    text-align: center;
+    margin-left: 22px;
+    margin-right: 145px;
+    padding: 11px;
     border: 1.7px solid;
-    margin-right: 146px;
     border-radius: 65px;
-    margin-left: 14px;
-    margin-top: 8px;
+    margin-top: 10px;
     margin-bottom: -5px;
+}
+
+.logoHeaderCentralizada {
+    margin-left: 79px;
+    margin-right: 85px;
 }
 
 .barraMenuHeader {
     border-bottom: 1px solid;
     border-color: rgb(171, 171, 171);
-    padding-top: 5%;
+    padding-top: 3%;
     font-weight: bold;
     padding-bottom: 2%;
 }
 
 .grave {
-    color: #CC4556;
+    color: #9C3542;
 }
 
 .medio {
@@ -108,13 +114,14 @@
 }
 
 .criticidadeAlert {
-    border: 1px solid;
+    border: 1.5px solid;
     border-radius: 30px;
     padding: 7px;
     font-size: 13px;
+    font-weight: 800;
 }
 
-//* CSS DOS CARDS ---------------------------------------------------------------- COM SUAS CORES *//
+// CSS DOS CARDS ---------------------------------------------------------------- COM SUAS CORES //
 .numerosDoCardAlinhamento {
     text-align: right;
     padding-top: 9%;
@@ -128,9 +135,9 @@
 .numerosDoCard {
     background-color: rgb(255, 255, 255);
     font-size: 13px;
-    border: 1px solid;
     border-radius: 30px;
     padding: 7px;
+    font-weight: 800;
 }
 
 .numerosCard {
@@ -147,7 +154,86 @@
     color: white;
 }
 
-//* DROPDOWN ------------------------------------------------------------ *//
+.backgroundGrave {
+    background: #9C3542;
+}
+
+.backgroundMedio {
+    background: #FAC862;
+}
+
+.backgroundFraco {
+    background: #3A7397;
+}
+
+// CSS DA TAB3 FORMULÁRIO ---------------------------------------------------------------- COM SUAS CORES //
+.informacoesMenuForm {
+    padding-top: 6%;
+    font-weight: bold;
+    padding-bottom: 5%;
+    font-size: 21px;
+    padding-left: 4%;
+}
+
+.formulario {
+    margin-left: 34px;
+    margin-right: 34px;
+    border: 1px solid #C6C6C6;
+    background: white;
+    border-radius: 9px;
+    padding-top: 4px;
+    padding-bottom: 8px;
+}
+
+.itensForm {
+    border: solid 1px #707070;
+    margin-top: 15px;
+    margin-bottom: 16px;
+    margin-left: 23px;
+    margin-right: 23px;
+    height: 35px;
+    border-radius: 9px;
+}
+
+.inputForm {
+    padding-bottom: 14px;
+    color: #707070;
+}
+
+.nomeItem {
+    color: #555B69;
+    margin-left: 28px;
+}
+
+.itemDescricao {
+    height: 135px;
+}
+
+.espacoItens {
+    margin-top: 18px;
+}
+
+.btnSalvar {
+    background: transparent;
+    color: #4D5467;
+    border: solid 1px #4D5467;
+    border-radius: 42px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.espacoBtnSalvar {
+    text-align: center;
+}
+
+.textAreaForm {
+    width: 266px;
+    height: 105px;
+}
+
+// DROPDOWN ------------------------------------------------------------ //
 .navBar {
     margin-top: -16px;
     margin-left: 62px;
@@ -188,7 +274,6 @@
 }
 
 .textoDropdown {
-    font-family: 'Montserrat Medium' 'Sans-Serif';
     font-size: 20px;
     padding-top: 12px;
     color: #707070;
