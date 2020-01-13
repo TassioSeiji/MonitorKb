@@ -5,13 +5,16 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
-  },  {
-    path: 'cadastro',
-    loadChildren: () => import('./cadastro/cadastro.module').then( m => m.CadastroPageModule)
   },
-
+  { path: 'cadastro', loadChildren: () => import('./cadastro/cadastro.module').then( m => m.CadastroPageModule) },   {
+    path: 'success',
+    loadChildren: () => import('./pages/success/success.module').then( m => m.SuccessPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+  },
   
-
 ];
 @NgModule({
   imports: [
