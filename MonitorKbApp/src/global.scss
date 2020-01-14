@@ -94,11 +94,13 @@
 }
 
 .txtMenuHeader {
-    font-weight: 600
+    text-transform: none;
+    font-weight: 600;
+    font-size: 17px;
 }
 
 .grave {
-    color: #9C3542;
+    color: #CC4556;
 }
 
 .medio {
@@ -114,10 +116,10 @@
 }
 
 .criticidadeAlert {
-    border: 1.5px solid;
+    border: 1.8px solid;
     border-radius: 30px;
     padding: 7px;
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 800;
 }
 
@@ -160,7 +162,7 @@
 }
 
 .backgroundGrave {
-    background: #9C3542;
+    background: #CC4556;
 }
 
 .backgroundMedio {
@@ -201,6 +203,7 @@
 .tituloDoCard {
     font-size: 20px;
     padding-left: 9%;
+    margin-top: -1%;
 }
 
 .corTxtCardColorido {
@@ -269,9 +272,8 @@
     display: none;
     top: 16px;
     position: absolute;
-    font-size: 14px;
+    font-size: 12px;
     left: 17px;
-    color: white;
 }
 
 .itemDescricao {
