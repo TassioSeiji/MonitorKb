@@ -140,6 +140,11 @@
     font-weight: 800;
 }
 
+.numerodoCardVerde {
+    border: 1px solid #30BF88;
+    font-size: 14px;
+}
+
 .numerosCard {
     margin-right: 7px;
 }
@@ -164,6 +169,51 @@
 
 .backgroundFraco {
     background: #3A7397;
+}
+
+.medioEscuroBorda {
+    color: #F3BB49;
+}
+
+.graveEscuroBorda {
+    color: #9C3542;
+}
+
+.fracoEscuroBorda {
+    color: #034C7B;
+}
+
+.cardsTela {
+    border: 0px solid;
+    border-radius: 15px;
+    border-bottom: 9px solid;
+}
+
+.cardCobranca {
+    border: 2px solid #30BF88;
+    border-radius: 15px;
+}
+
+.conteudoDoCardVerde {
+    color: #30BF88;
+}
+
+.tituloDoCard {
+    font-size: 20px;
+    padding-left: 9%;
+}
+
+.corTxtCardColorido {
+    color: white;
+}
+
+.corCardVerde {
+    color: #30BF88;
+}
+
+.backgroundCinzaFundo {
+    background: #EFF3F6;
+    padding-bottom: 3px;
 }
 
 // CSS DA TAB3 FORMULÁRIO ---------------------------------------------------------------- COM SUAS CORES //
@@ -203,6 +253,15 @@
 .nomeItem {
     color: #555B69;
     margin-left: 28px;
+}
+
+.jaEncaminhado {
+    display: none;
+    top: 16px;
+    position: absolute;
+    font-size: 14px;
+    left: 17px;
+    color: white;
 }
 
 .itemDescricao {
