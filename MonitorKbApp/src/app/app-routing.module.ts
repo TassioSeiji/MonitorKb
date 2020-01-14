@@ -6,7 +6,7 @@ const routes: Routes = [
     path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
-  { path: 'cadastro', loadChildren: () => import('./validacao/cadastro/cadastro.module').then( m => m.CadastroPageModule) },   {
+  { 
     path: 'success',
     loadChildren: () => import('./pages/success/success.module').then( m => m.SuccessPageModule)
   },
