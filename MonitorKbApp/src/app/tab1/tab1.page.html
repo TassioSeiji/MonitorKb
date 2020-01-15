@@ -3,7 +3,7 @@
         <ion-grid>
             <ion-row>
                 <ion-title class="logoHeader">
-                    VIC KB Teste
+                    VIC KB
                 </ion-title>
                 <ion-button fill="clear">
                     <ion-icon name="create" color="light" class="logoHeaderPrincipal"></ion-icon>
@@ -87,15 +87,15 @@
             <ion-col *ngFor="let item of this.dadosDoDia" size="6">
                 <ion-card class="cardsTela graveEscuroBorda">
                     <ion-card-header class="tituloDoCard corTxtCardColorido background{{item.nCodCriticidade}}">
-                     
-                      <ion-card-title>eSeg/KB {{item.nQtdeOcorrencias}}</ion-card-title>
+
+                        <ion-card-title>eSeg/KB {{item.nQtdeOcorrencias}}</ion-card-title>
                     </ion-card-header>
-                  
-                    <ion-card-content  class="conteudoDoCard background{{item.nCodCriticidade}}">
+
+                    <ion-card-content class="conteudoDoCard background{{item.nCodCriticidade}}">
                         {{item.DescricaoTipoCritica}}
                     </ion-card-content>
-                  </ion-card>
-                  
+                </ion-card>
+
                 <!-- <ion-card class="cardsTela graveEscuroBorda">
                     <ion-header translucent>
                         <ion-toolbar>
