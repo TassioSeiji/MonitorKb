@@ -81,38 +81,21 @@
         </ion-grid>
     </div>
 
-
-    <div>
-        <ion-row>
-            <ion-col *ngFor="let item of this.dadosDoDia" size="6">
-                <ion-card class="cardsTela graveEscuroBorda">
-                    <ion-card-header class="tituloDoCard corTxtCardColorido background{{item.nCodCriticidade}}">
-                     
-                      <ion-card-title>eSeg/KB {{item.nQtdeOcorrencias}}</ion-card-title>
-                    </ion-card-header>
-                  
-                    <ion-card-content  class="conteudoDoCard background{{item.nCodCriticidade}}">
-                        {{item.DescricaoTipoCritica}}
-                    </ion-card-content>
-                  </ion-card>
-                  
-                <!-- <ion-card class="cardsTela graveEscuroBorda">
-                    <ion-header translucent>
-                        <ion-toolbar>
-                            <ion-title class="tituloDoCard corTxtCardColorido background{{item.nCodCriticidade}}">
-                                eSeg/KB {{item.nQtdeOcorrencias}}
-                            </ion-title>                            
-                            <ion-card-content class="conteudoDoCard background{{item.nCodCriticidade}}">
-                                {{item.DescricaoTipoCritica}}
-                            </ion-card-content>
-                        </ion-toolbar>
-                    </ion-header>
-                </ion-card> -->
-            </ion-col>
-        </ion-row>
-    </div>
-
-
-
+    <ion-row>
+        <ion-col *ngFor="let item of this.dadosDoDia" size="6">
+            <ion-card class="cardsTela BordaCard{{item.nCodCriticidade}}">
+                <ion-card-content class="conteudoDoCard background{{item.nCodCriticidade}}">
+                    <div class="subTituloRight">
+                        {{item.nQtdeOcorrencias}}
+                    </div>
+                    <br />
+                    <br />
+                    <br />
+                    <p class="subTitulo">eSeg/KB</p>
+                    <p>{{item.DescricaoTipoCritica}}</p>
+                </ion-card-content>
+            </ion-card>
+        </ion-col>
+    </ion-row>
 
 </ion-content>

@@ -153,6 +153,7 @@
 
 .conteudoDoCard {
     color: white;
+    min-height: 200px;
 }
 
 .tituloDoCard {
@@ -177,15 +178,30 @@
     
 }
 
-.medioEscuroBorda {
+.subTituloRight
+{
+    float: right;
+    border-radius: 50px;
+    background-color: white;
+    font-size: 26px;
+    padding: 5px;
+    color: black;
+}
+
+p.subTitulo{
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.BordaCard2 {
     color: #F3BB49;
 }
 
-.graveEscuroBorda {
+.BordaCard1 {
     color: #9C3542;
 }
 
-.fracoEscuroBorda {
+.BordaCard3 {
     color: #034C7B;
 }
 
