@@ -21,7 +21,7 @@
         <ion-grid>
             <ion-row class="ion-text-center">
                 <ion-col>
-                    <ion-button fill="clear">
+                    <ion-button (click)="produtoContabilComparador('Produto Contábil')" fill="clear">
                         <ion-text color="secondary">
 
                             <a class="txtMenuHeader">Produto Contábil</a>
@@ -31,7 +31,7 @@
                     </ion-button>
                 </ion-col>
                 <ion-col>
-                    <ion-button (click)="Cobranca()" fill="clear">
+                    <ion-button (click)="produtoContabilComparador('Cobrança')" fill="clear">
                         <ion-text color="secondary">
 
                             <a class="txtMenuHeader">Cobrança</a>
@@ -43,23 +43,23 @@
             </ion-row>
         </ion-grid>
     </div>
-    <div *ngFor="let item of this.quantidadeOcorrencias" class="topoFiltroECriticidade">
+    <div  class="topoFiltroECriticidade">
         <ion-grid>
             <ion-row>
                 <div>
                     <ion-col>
-                        <ion-text class="grave criticidadeAlert"></ion-text>
+                        <ion-text class="grave criticidadeAlert">{{this.totalCriticidadeAlta}}</ion-text>
                     </ion-col>
                     <ion-col>
-                        <ion-text class="medio criticidadeAlert"></ion-text>
-                    </ion-col>
-
-                    <ion-col>
-                        <ion-text class="fraco criticidadeAlert"></ion-text>
+                        <ion-text class="medio criticidadeAlert">{{this.totalCriticidadeMedio}}</ion-text>
                     </ion-col>
 
                     <ion-col>
-                        <ion-text class="todos criticidadeAlert">{{item.nQtdeOcorrencias}}</ion-text>
+                        <ion-text class="fraco criticidadeAlert">{{this.totalCriticidadeFraco}}</ion-text>
+                    </ion-col>
+
+                    <ion-col>
+                        <ion-text class="todos criticidadeAlert">{{this.totalCriticidadeTodas}}</ion-text>
                     </ion-col>
                 </div>
                 <ion-col>
@@ -81,7 +81,7 @@
     </div>
 
     <ion-row>
-        <ion-col *ngFor="let item of this.dadosDoDia" size="6">
+        <ion-col *ngFor="let item of this.dadosFiltrados" size="6">
             <ion-card class="cardsTela BordaCard{{item.nCodCriticidade}}">
                 <ion-card-content class="conteudoDoCard background{{item.nCodCriticidade}}">
                     <div class="subTituloRight BordaCard{{item.nCodCriticidade}}">
