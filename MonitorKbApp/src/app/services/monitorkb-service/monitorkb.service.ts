@@ -22,4 +22,7 @@ export class MonitorkbService {
     obterDadosDoDia() {
       return this.requestService.get(`monitorKb/obterDadosDoDia`);
     }
+    obterQuantidadeOcorrencias() {
+      return this.requestService.get(`monitorKb/obterQuantidadeOcorrencias`);
+    }
 }

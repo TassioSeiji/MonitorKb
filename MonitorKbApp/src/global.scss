@@ -175,20 +175,26 @@
 .background3 {
     background: #3A7397;
     color: white;
-    
 }
 
-.subTituloRight
-{
+.background4 {
+    background: #C6C6C6;
+    color: white;
+}
+
+.subTituloRight {
     float: right;
-    border-radius: 50px;
+    border-radius: 62px;
     background-color: white;
-    font-size: 26px;
-    padding: 5px;
+    font-size: 22px;
+    padding-top: 5px;
     color: black;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 5px;
 }
 
-p.subTitulo{
+p.subTitulo {
     font-size: 19px;
     font-weight: 600;
 }
@@ -203,6 +209,10 @@ p.subTitulo{
 
 .BordaCard3 {
     color: #034C7B;
+}
+
+.BordaCard4 {
+    color: #AFAFAF;
 }
 
 .cardsTela {
@@ -242,11 +252,6 @@ p.subTitulo{
 
 .corCardVerde {
     color: #30BF88;
-}
-
-.backgroundCinzaFundo {
-    background: #EFF3F6;
-    padding-bottom: 3px;
 }
 
 // CSS DA TAB3 FORMULÁRIO ---------------------------------------------------------------- COM SUAS CORES //

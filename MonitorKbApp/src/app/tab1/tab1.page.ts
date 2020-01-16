@@ -12,11 +12,17 @@ import { MonitorkbService } from 'src/app/services/monitorkb-service/monitorkb.s
 
 export class Tab1Page implements OnInit {
   dadosDoDia = [];
+  quantidadeOcorrencias = [];
+  totalTodos:any = 0;
+  totalGrave = 0;
+  totalMedio = 0;
+  totalFraco = 0;
 
   constructor( public router: Router, public monitorkbService: MonitorkbService) {}
 
   ngOnInit() {    
-    this.carregarDadosDia();    
+    this.carregarDadosDia();
+    this.totalGrave:any = ;
   }
 
   carregarDadosDia() {
@@ -24,7 +30,11 @@ export class Tab1Page implements OnInit {
       this.dadosDoDia = value.DadosDoDia || [];      
     });        
   }
-
+  calcularTotalPorCriticidade(idCriticidade) 
+  {
+    this.totalGrave=idCriticidade
+    return  this.dadosDoDia = (a => a.nCodCriticidade = idCriticidade)
+  }
   Cobranca() {   
     this.router.navigate(['tabs', 'tab2', {      
     }]);       

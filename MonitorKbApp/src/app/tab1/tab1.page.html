@@ -43,24 +43,23 @@
             </ion-row>
         </ion-grid>
     </div>
-
-    <div class="topoFiltroECriticidade">
+    <div *ngFor="let item of this.quantidadeOcorrencias" class="topoFiltroECriticidade">
         <ion-grid>
             <ion-row>
                 <div>
                     <ion-col>
-                        <ion-text class="grave criticidadeAlert">30</ion-text>
+                        <ion-text class="grave criticidadeAlert"></ion-text>
                     </ion-col>
                     <ion-col>
-                        <ion-text class="medio criticidadeAlert">07</ion-text>
-                    </ion-col>
-
-                    <ion-col>
-                        <ion-text class="fraco criticidadeAlert">04</ion-text>
+                        <ion-text class="medio criticidadeAlert"></ion-text>
                     </ion-col>
 
                     <ion-col>
-                        <ion-text class="todos criticidadeAlert">43</ion-text>
+                        <ion-text class="fraco criticidadeAlert"></ion-text>
+                    </ion-col>
+
+                    <ion-col>
+                        <ion-text class="todos criticidadeAlert">{{item.nQtdeOcorrencias}}</ion-text>
                     </ion-col>
                 </div>
                 <ion-col>
@@ -85,12 +84,12 @@
         <ion-col *ngFor="let item of this.dadosDoDia" size="6">
             <ion-card class="cardsTela BordaCard{{item.nCodCriticidade}}">
                 <ion-card-content class="conteudoDoCard background{{item.nCodCriticidade}}">
-                    <div class="subTituloRight">
+                    <div class="subTituloRight BordaCard{{item.nCodCriticidade}}">
                         {{item.nQtdeOcorrencias}}
                     </div>
                     <br />
                     <br />
-                    <br />                    
+                    <br />
                     <p class="subTitulo">eSeg/KB</p>
                     <p>{{item.DescricaoTipoCritica}}</p>
                 </ion-card-content>
