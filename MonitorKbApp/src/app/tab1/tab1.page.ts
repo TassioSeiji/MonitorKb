@@ -11,14 +11,14 @@ export class Tab1Page implements OnInit {
   dadosDoDia = [];
   produtoContabil = [];
   dadosFiltrados = [];
-  totalCriticidadeTodas= 0;
+  totalCriticidadeTodas = 0;
   totalCriticidadeAlta = 0;
   totalCriticidadeMedio = 0;
   totalCriticidadeFraco = 0;
   idCriticidadeAlta = 1;
   idCriticidadeMedia = 2;
   idCriticidadeBaixa = 3;
-  
+
 
   constructor(public router: Router, public monitorkbService: MonitorkbService) { }
 
@@ -27,7 +27,7 @@ export class Tab1Page implements OnInit {
   }
 
   carregarDadosDia() {
-      this.monitorkbService.obterDadosDoDia().subscribe(value => {
+    this.monitorkbService.obterDadosDoDia().subscribe(value => {
       this.dadosDoDia = value.DadosDoDia || [];
       this.produtoContabilComparador('Produto Contábil');
     });
@@ -41,16 +41,16 @@ export class Tab1Page implements OnInit {
     for (i = 0; i < count.length; i++) {
       total = total + parseInt(count[i].nQtdeOcorrencias);
     }
+    
     return total;
   }
 
-  produtoContabilComparador(tipoControle){
-   this.dadosFiltrados = this.dadosDoDia.filter((obj) => obj.sTipoControle === tipoControle)
-   this.totalCriticidadeAlta = this.calcularTotalPorCriticidade(this.idCriticidadeAlta);
-   this.totalCriticidadeMedio = this.calcularTotalPorCriticidade(this.idCriticidadeMedia);
-   this.totalCriticidadeFraco = this.calcularTotalPorCriticidade(this.idCriticidadeBaixa);
-   this.totalCriticidadeTodas = this.totalCriticidadeAlta+this.totalCriticidadeMedio+this.totalCriticidadeFraco;
-   
+  produtoContabilComparador(tipoControle) {
+    this.dadosFiltrados = this.dadosDoDia.filter((obj) => obj.sTipoControle === tipoControle)
+    document.getElementById("lblTotalCriticidadeAlta").innerHTML = this.calcularTotalPorCriticidade(this.idCriticidadeAlta).toString();
+    document.getElementById("lblTotalCriticidadeMedia").innerHTML = this.calcularTotalPorCriticidade(this.idCriticidadeMedia).toString();
+    document.getElementById("lblTotalCriticidadeBaixa").innerHTML = this.calcularTotalPorCriticidade(this.idCriticidadeBaixa).toString();
+    document.getElementById("lblTotalCriticidadeTotal").innerHTML = (this.totalCriticidadeAlta + this.totalCriticidadeMedio + this.totalCriticidadeFraco).toString();
   }
 
   cobranca() {
