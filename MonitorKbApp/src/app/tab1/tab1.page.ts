@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MonitorkbService } from 'src/app/services/monitorkb-service/monitorkb.service';
-import { NavParams } from '@ionic/angular';
-import { ModalService } from '../services/modal-service/modal.service';
+import { AlertController } from '@ionic/angular';
+
 
 
 @Component({
@@ -23,21 +23,27 @@ export class Tab1Page implements OnInit {
   idCriticidadeMedia = 2;
   idCriticidadeBaixa = 3;
   armazenarCalculoTotalCriticidade = 0;
+  codigoTipoCritica: any[];
+  dataReferencia: any[];
+  codCriticidade: any[];
+  
+
+ 
   
 
 
-  constructor(public router: Router, public monitorkbService: MonitorkbService, public modalKbService: ModalService) { }
+  constructor(public router: Router, public monitorkbService: MonitorkbService, public alertCtrl: AlertController) { }
 
   ngOnInit() {
     this.carregarDadosDia();
     
+    
   }
 
   carregarDadosDia() {
-    this.monitorkbService.obterDadosDoDia().subscribe(value => {
+      this.monitorkbService.obterDadosDoDia().subscribe(value => {
       this.dadosDoDia = value.DadosDoDia || [];
-      this.produtoContabilComparador('Produto Contábil');
-    
+      this.produtoContabilComparador('Produto Contábil');  
     });
   }
 
@@ -50,7 +56,7 @@ export class Tab1Page implements OnInit {
     for (i = 0; i < count.length; i++) {
       total = total + parseInt(count[i].nQtdeOcorrencias);
     }
-   
+    
     return total;
     
   }
@@ -66,10 +72,46 @@ export class Tab1Page implements OnInit {
     document.getElementById("lblTotalCriticidadeTotal").innerHTML = this.armazenarCalculoTotalCriticidade.toString();
   }
 
+  public async modalBaixaReenviar(dDataRef,nCodTipoCritica,nCodCriticidade){ 
+    const alert = await this.alertCtrl.create({
+      header: 'O Que Você Deseja',
+      buttons: [
+        {
+          text: 'Baixar',
+          handler: () => {
+            this.dataReferencia = dDataRef;
+            this.codCriticidade = nCodCriticidade;
+            this.codigoTipoCritica = nCodTipoCritica
+            console.log(this.baixaCriticidade());}
+        },
+        {
+          text: 'Reencaminhar',
+          handler: () => {
+            this.dataReferencia = dDataRef;
+            this.codCriticidade = nCodCriticidade;
+            this.codigoTipoCritica = nCodTipoCritica
+            console.log(this.reencaminhaCriticidade())
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
   cobranca() {
     this.router.navigate(['tabs', 'tab2', {
-    }]);
-    
+    }]);  
   }
-  
+
+testeMeu(){
+ 
+  ;
+}
+  baixaCriticidade(){
+ 
+   this.monitorkbService.baixaCriticidade(this.dataReferencia, this.codCriticidade, this.codigoTipoCritica);
+  }
+ reencaminhaCriticidade(){
+   this.monitorkbService.reenviarNotificacao(this.dataReferencia, this.codCriticidade, this.codigoTipoCritica);
+ }       
 }

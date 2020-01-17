@@ -79,10 +79,9 @@
             </ion-row>
         </ion-grid>
     </div>
-    <ion-button (click)="modalBaixaReenviar">TESTE ABRE AQ</ion-button>
     <ion-row>
         <ion-col *ngFor="let item of this.dadosFiltrados" size="6">
-            <ion-card class="cardsTela BordaCard{{item.nCodCriticidade}}">
+            <ion-card id="" (click)="modalBaixaReenviar(item.dDataRef,item.nCodTipoCritica,item.nCodCriticidade)" class="cardsTela BordaCard{{item.nCodCriticidade}}">
                 <ion-card-content class="conteudoDoCard background{{item.nCodCriticidade}}">
                     <div class="subTituloRight BordaCard{{item.nCodCriticidade}}">
                         {{item.nQtdeOcorrencias}}
@@ -96,5 +95,4 @@
             </ion-card>
         </ion-col>
     </ion-row>
-
 </ion-content>

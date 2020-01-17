@@ -10,6 +10,7 @@ import { UserService } from '../user-service/user.service';
 import { Storage } from '@ionic/storage';
 
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -24,5 +25,13 @@ export class MonitorkbService {
     }
     obterQuantidadeOcorrencias() {
       return this.requestService.get(`monitorKb/obterQuantidadeOcorrencias`);
+    }
+
+    baixaCriticidade(dataReferencia,codigoTipoCritica,codCriticidade){
+      return this.requestService.get('MonitorKb/baixaCriticidade');
+    }
+
+    reenviarNotificacao(dataReferencia,codigoTipoCritica,codCriticidade){
+      return this.requestService.get('MonitorKb/reenviarNotificacao');
     }
 }
