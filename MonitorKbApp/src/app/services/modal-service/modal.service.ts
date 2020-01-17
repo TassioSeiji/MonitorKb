@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { SuccessPage } from 'src/app/pages/success/success.page';
 
+
 @Injectable()
 export class ModalService {
   public modal: any=null;

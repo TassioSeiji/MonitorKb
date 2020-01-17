@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MonitorkbService } from 'src/app/services/monitorkb-service/monitorkb.service';
+import { NavParams } from '@ionic/angular';
+import { ModalService } from '../services/modal-service/modal.service';
+
+
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
@@ -18,21 +22,26 @@ export class Tab1Page implements OnInit {
   idCriticidadeAlta = 1;
   idCriticidadeMedia = 2;
   idCriticidadeBaixa = 3;
+  armazenarCalculoTotalCriticidade = 0;
+  
 
 
-  constructor(public router: Router, public monitorkbService: MonitorkbService) { }
+  constructor(public router: Router, public monitorkbService: MonitorkbService, public modalKbService: ModalService) { }
 
   ngOnInit() {
     this.carregarDadosDia();
+    
   }
 
   carregarDadosDia() {
     this.monitorkbService.obterDadosDoDia().subscribe(value => {
       this.dadosDoDia = value.DadosDoDia || [];
       this.produtoContabilComparador('Produto Contábil');
+    
     });
   }
 
+ 
   calcularTotalPorCriticidade(idCriticidade) {
     var count = this.dadosFiltrados.filter((obj) => obj.nCodCriticidade === idCriticidade);
     var i = 0;
@@ -41,20 +50,26 @@ export class Tab1Page implements OnInit {
     for (i = 0; i < count.length; i++) {
       total = total + parseInt(count[i].nQtdeOcorrencias);
     }
-    
+   
     return total;
+    
   }
 
-  produtoContabilComparador(tipoControle) {
+
+  
+   produtoContabilComparador(tipoControle) {
     this.dadosFiltrados = this.dadosDoDia.filter((obj) => obj.sTipoControle === tipoControle)
     document.getElementById("lblTotalCriticidadeAlta").innerHTML = this.calcularTotalPorCriticidade(this.idCriticidadeAlta).toString();
     document.getElementById("lblTotalCriticidadeMedia").innerHTML = this.calcularTotalPorCriticidade(this.idCriticidadeMedia).toString();
     document.getElementById("lblTotalCriticidadeBaixa").innerHTML = this.calcularTotalPorCriticidade(this.idCriticidadeBaixa).toString();
-    document.getElementById("lblTotalCriticidadeTotal").innerHTML = (this.totalCriticidadeAlta + this.totalCriticidadeMedio + this.totalCriticidadeFraco).toString();
+    this.armazenarCalculoTotalCriticidade = (this.calcularTotalPorCriticidade(this.idCriticidadeAlta) + this.calcularTotalPorCriticidade(this.idCriticidadeMedia) + this.calcularTotalPorCriticidade(this.idCriticidadeBaixa));
+    document.getElementById("lblTotalCriticidadeTotal").innerHTML = this.armazenarCalculoTotalCriticidade.toString();
   }
 
   cobranca() {
     this.router.navigate(['tabs', 'tab2', {
     }]);
+    
   }
+  
 }
