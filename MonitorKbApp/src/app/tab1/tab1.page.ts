@@ -3,8 +3,6 @@ import { Router } from '@angular/router';
 import { MonitorkbService } from 'src/app/services/monitorkb-service/monitorkb.service';
 import { AlertController } from '@ionic/angular';
 
-
-
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
@@ -25,19 +23,12 @@ export class Tab1Page implements OnInit {
   armazenarCalculoTotalCriticidade = 0;
   codigoTipoCritica: any[];
   dataReferencia: any[];
-  codCriticidade: any[];
-  
-
- 
-  
-
+  codigoCriticidade: any[];
 
   constructor(public router: Router, public monitorkbService: MonitorkbService, public alertCtrl: AlertController) { }
 
   ngOnInit() {
     this.carregarDadosDia();
-    
-    
   }
 
   carregarDadosDia() {
@@ -47,7 +38,6 @@ export class Tab1Page implements OnInit {
     });
   }
 
- 
   calcularTotalPorCriticidade(idCriticidade) {
     var count = this.dadosFiltrados.filter((obj) => obj.nCodCriticidade === idCriticidade);
     var i = 0;
@@ -57,11 +47,8 @@ export class Tab1Page implements OnInit {
       total = total + parseInt(count[i].nQtdeOcorrencias);
     }
     
-    return total;
-    
+    return total;    
   }
-
-
   
    produtoContabilComparador(tipoControle) {
     this.dadosFiltrados = this.dadosDoDia.filter((obj) => obj.sTipoControle === tipoControle)
@@ -80,7 +67,7 @@ export class Tab1Page implements OnInit {
           text: 'Baixar',
           handler: () => {
             this.dataReferencia = dDataRef;
-            this.codCriticidade = nCodCriticidade;
+            this.codigoCriticidade = nCodCriticidade;
             this.codigoTipoCritica = nCodTipoCritica
             console.log(this.baixaCriticidade());}
         },
@@ -88,7 +75,7 @@ export class Tab1Page implements OnInit {
           text: 'Reencaminhar',
           handler: () => {
             this.dataReferencia = dDataRef;
-            this.codCriticidade = nCodCriticidade;
+            this.codigoCriticidade = nCodCriticidade;
             this.codigoTipoCritica = nCodTipoCritica
             console.log(this.reencaminhaCriticidade())
           }
@@ -108,12 +95,12 @@ testeMeu(){
   ;
 }
   baixaCriticidade(){
-    this.monitorkbService.baixaCriticidade(this.dataReferencia, this.codCriticidade, this.codigoTipoCritica).subscribe(
+    this.monitorkbService.baixaCriticidade(this.dataReferencia, this.codigoCriticidade, this.codigoTipoCritica).subscribe(
       data => {     
-        alert("Sucesso");        
+        this.carregarDadosDia();
       },
       error => {
-        alert("Erro");        
+        alert("Não foi possível baixar a criticidade.");        
       },
       () => {        
         console.log("ACABEI")
@@ -121,6 +108,15 @@ testeMeu(){
     )   
   }
  reencaminhaCriticidade(){
-   this.monitorkbService.reenviarNotificacao(this.dataReferencia, this.codCriticidade, this.codigoTipoCritica);
+  this.monitorkbService.reenviarNotificacao(this.dataReferencia, this.codigoCriticidade, this.codigoTipoCritica).subscribe(
+    data => {             
+    },
+    error => {
+      alert("Não foi possível reenviar.");        
+    },
+    () => {        
+      console.log("ACABEI")
+    }
+  )   
  }       
 }

@@ -27,23 +27,23 @@ export class MonitorkbService {
       return this.requestService.get(`monitorKb/obterQuantidadeOcorrencias`);
     }
 
-    baixaCriticidade(dataReferencia,codigoTipoCritica,codCriticidade){
+    baixaCriticidade(dataReferencia,codigoCriticidade, codigoTipoCritica){
       var body = {
         "dataReferencia" : new Date(dataReferencia),
         "codigoTipoCritica": codigoTipoCritica,
-        "codigoCriticidade":codCriticidade
+        "codigoCriticidade":codigoCriticidade
       }
 
       return this.requestService.post(`monitorKb/baixaCriticidade`, body);
     }
 
-    reenviarNotificacao(dataReferencia,codigoTipoCritica,codCriticidade){
+    reenviarNotificacao(dataReferencia,codigoCriticidade, codigoTipoCritica){
       let body = {
         "dataReferencia" : new Date(dataReferencia),
         "codigoTipoCritica": codigoTipoCritica,
-        "codigoCriticidade":codCriticidade
+        "codigoCriticidade":codigoCriticidade
       }
 
-      return this.requestService.post('monitorKb/reenviarNotificacao', body);
+      return this.requestService.post(`monitorKb/reenviarNotificacao`, body);      
     }
 } 
