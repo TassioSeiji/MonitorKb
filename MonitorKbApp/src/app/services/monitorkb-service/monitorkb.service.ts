@@ -28,20 +28,20 @@ export class MonitorkbService {
     }
 
     baixaCriticidade(dataReferencia,codigoTipoCritica,codCriticidade){
-      let body = {
+      var body = {
         "dataReferencia" : new Date(dataReferencia),
         "codigoTipoCritica": codigoTipoCritica,
-        "codCriticidade":codCriticidade
+        "codigoCriticidade":codCriticidade
       }
 
-      return this.requestService.post('monitorKb/baixaCriticidade', body);
+      return this.requestService.post(`monitorKb/baixaCriticidade`, body);
     }
 
     reenviarNotificacao(dataReferencia,codigoTipoCritica,codCriticidade){
       let body = {
         "dataReferencia" : new Date(dataReferencia),
         "codigoTipoCritica": codigoTipoCritica,
-        "codCriticidade":codCriticidade
+        "codigoCriticidade":codCriticidade
       }
 
       return this.requestService.post('monitorKb/reenviarNotificacao', body);

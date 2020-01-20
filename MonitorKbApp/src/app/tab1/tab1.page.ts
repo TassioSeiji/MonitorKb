@@ -108,8 +108,17 @@ testeMeu(){
   ;
 }
   baixaCriticidade(){
- 
-   this.monitorkbService.baixaCriticidade(this.dataReferencia, this.codCriticidade, this.codigoTipoCritica);
+    this.monitorkbService.baixaCriticidade(this.dataReferencia, this.codCriticidade, this.codigoTipoCritica).subscribe(
+      data => {     
+        alert("Sucesso");        
+      },
+      error => {
+        alert("Erro");        
+      },
+      () => {        
+        console.log("ACABEI")
+      }
+    )   
   }
  reencaminhaCriticidade(){
    this.monitorkbService.reenviarNotificacao(this.dataReferencia, this.codCriticidade, this.codigoTipoCritica);
