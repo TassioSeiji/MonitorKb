@@ -25,7 +25,7 @@ export class Tab1Page implements OnInit {
   armazenarCalculoTotalCriticidade = 0;
   codigoTipoCritica: any[];
   dataReferencia: any[];
-  codCriticidade: any[];
+  codigoCriticidade: any[];
   
 
  
@@ -80,7 +80,7 @@ export class Tab1Page implements OnInit {
           text: 'Baixar',
           handler: () => {
             this.dataReferencia = dDataRef;
-            this.codCriticidade = nCodCriticidade;
+            this.codigoCriticidade = nCodCriticidade;
             this.codigoTipoCritica = nCodTipoCritica
             console.log(this.baixaCriticidade());}
         },
@@ -88,7 +88,7 @@ export class Tab1Page implements OnInit {
           text: 'Reencaminhar',
           handler: () => {
             this.dataReferencia = dDataRef;
-            this.codCriticidade = nCodCriticidade;
+            this.codigoCriticidade = nCodCriticidade;
             this.codigoTipoCritica = nCodTipoCritica
             console.log(this.reencaminhaCriticidade())
           }
@@ -109,9 +109,9 @@ testeMeu(){
 }
   baixaCriticidade(){
  
-   this.monitorkbService.baixaCriticidade(this.dataReferencia, this.codCriticidade, this.codigoTipoCritica);
+   this.monitorkbService.baixaCriticidade(this.dataReferencia, this.codigoCriticidade, this.codigoTipoCritica);
   }
  reencaminhaCriticidade(){
-   this.monitorkbService.reenviarNotificacao(this.dataReferencia, this.codCriticidade, this.codigoTipoCritica);
+   this.monitorkbService.reenviarNotificacao(this.dataReferencia, this.codigoCriticidade, this.codigoTipoCritica);
  }       
 }
