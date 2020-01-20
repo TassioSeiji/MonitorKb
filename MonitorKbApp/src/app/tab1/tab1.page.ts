@@ -20,10 +20,13 @@ export class Tab1Page implements OnInit {
   idCriticidadeAlta = 1;
   idCriticidadeMedia = 2;
   idCriticidadeBaixa = 3;
+  idCriticidadeTodos = 5;
   armazenarCalculoTotalCriticidade = 0;
   codigoTipoCritica: any[];
   dataReferencia: any[];
   codigoCriticidade: any[];
+  dadosFiltradosSelect: any[];
+  currentTipoControle = "";
 
   constructor(public router: Router, public monitorkbService: MonitorkbService, public alertCtrl: AlertController) { }
 
@@ -51,6 +54,7 @@ export class Tab1Page implements OnInit {
   }
   
    produtoContabilComparador(tipoControle) {
+    this.currentTipoControle = tipoControle;
     this.dadosFiltrados = this.dadosDoDia.filter((obj) => obj.sTipoControle === tipoControle)
     document.getElementById("lblTotalCriticidadeAlta").innerHTML = this.calcularTotalPorCriticidade(this.idCriticidadeAlta).toString();
     document.getElementById("lblTotalCriticidadeMedia").innerHTML = this.calcularTotalPorCriticidade(this.idCriticidadeMedia).toString();
@@ -90,10 +94,13 @@ export class Tab1Page implements OnInit {
     }]);  
   }
 
-testeMeu(){
- 
-  ;
-}
+  async filtroSelecaoCriticidade(selecaoValor){
+      this.produtoContabilComparador(this.currentTipoControle);
+      if(parseInt(selecaoValor.detail.value) !== this.idCriticidadeTodos){
+        this.dadosFiltrados = this.dadosFiltrados.filter((obj) => obj.nCodCriticidade === parseInt(selecaoValor.detail.value))  
+      }               
+  }
+
   baixaCriticidade(){
     this.monitorkbService.baixaCriticidade(this.dataReferencia, this.codigoCriticidade, this.codigoTipoCritica).subscribe(
       data => {     

@@ -66,11 +66,11 @@
                     <ion-label>
                         <div class="navBar">
                             <div class="dropdown bordaSelect">
-                                <ion-select class="bordaSelect" placeholder="Todos">
-                                    <ion-select-option value="grave">Grave</ion-select-option>
-                                    <ion-select-option value="medio">Médio</ion-select-option>
-                                    <ion-select-option value="fraco">Fraco</ion-select-option>
-                                    <ion-select-option value="todos">Todos</ion-select-option>
+                                <ion-select (ionChange)="filtroSelecaoCriticidade($event);" class="bordaSelect" placeholder="Todos">
+                                    <ion-select-option value="1">Grave</ion-select-option>
+                                    <ion-select-option value="2">Médio</ion-select-option>
+                                    <ion-select-option value="3">Fraco</ion-select-option>
+                                    <ion-select-option value="5">Todos</ion-select-option>
                                 </ion-select>
                             </div>
                         </div>
@@ -80,16 +80,16 @@
         </ion-grid>
     </div>
     <ion-row>
-        <ion-col *ngFor="let item of this.dadosFiltrados" size="6">
-            <ion-card id="" (click)="modalBaixaReenviar(item.dDataRef,item.nCodTipoCritica,item.nCodCriticidade)" class="cardsTela BordaCard{{item.nCodCriticidade}}">
-                <ion-card-content class="conteudoDoCard background{{item.nCodCriticidade}}">
-                    <div class="subTituloRight BordaCard{{item.nCodCriticidade}}">
+        <ion-col *ngFor="let item of this.dadosFiltrados" size="6 ">
+            <ion-card id=" " (click)="modalBaixaReenviar(item.dDataRef,item.nCodTipoCritica,item.nCodCriticidade) " class="cardsTela BordaCard{{item.nCodCriticidade}} ">
+                <ion-card-content class="conteudoDoCard background{{item.nCodCriticidade}} ">
+                    <div class="subTituloRight BordaCard{{item.nCodCriticidade}} ">
                         {{item.nQtdeOcorrencias}}
                     </div>
                     <br />
                     <br />
                     <br />
-                    <p class="subTitulo">eSeg/KB</p>
+                    <p class="subTitulo ">eSeg/KB</p>
                     <p>{{item.DescricaoTipoCritica}}</p>
                 </ion-card-content>
             </ion-card>
