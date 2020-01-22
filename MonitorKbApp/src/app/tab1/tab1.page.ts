@@ -107,6 +107,17 @@ export class Tab1Page implements OnInit {
       }               
   }
 
+  btn(getElementById){
+    var i =0;
+    var a = document.getElementsByTagName('produto')
+    for (i = 0; i < a.length; i++) {
+        a[i].classList.remove('um')
+    }
+    getElementById.class.add('um');
+}
+
+
+
   baixaCriticidade(){
     this.monitorkbService.baixaCriticidade(this.dataReferencia, this.codigoCriticidade, this.codigoTipoCritica).subscribe(
       data => {     

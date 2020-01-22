@@ -11,18 +11,18 @@
 </ion-header>
 <ion-content color="tertiary">
     <div>
-        <div class="um">
+        <div>
             <ion-grid>
                 <ion-row class="ion-text-center">
                     <ion-col>
-                        <ion-button (click)="produtoContabilComparador('Produto Contábil'); bordaHeader('um')" fill="clear">
+                        <ion-button  (click)="produtoContabilComparador('Produto Contábil'); bordaHeader('um')" fill="clear">
                             <ion-text color="secondary">
 
-                                <a class="txtMenuHeader">Produto Contábil</a>
+                                <a id= "produto" (click) = "btn (this)" class="txtMenuHeader">Produto Contábil</a>
 
                             </ion-text>
 
-                        </ion-button>
+                        </ion-button >
                     </ion-col>
                     <ion-col>
                         <ion-button (click)="produtoContabilComparador('Cobrança'); bordaHeader('dois')" fill="clear">
@@ -41,7 +41,7 @@
     <div class="topoFiltroECriticidade">
         <ion-grid>
             <ion-row>
-                <div>
+                <ion-col size="6">
                     <ion-col>
                         <ion-text id="lblTotalCriticidadeAlta" class="grave criticidadeAlert"></ion-text>
                     </ion-col>
@@ -56,11 +56,11 @@
                     <ion-col>
                         <ion-text id="lblTotalCriticidadeTotal" class="todos criticidadeAlert"></ion-text>
                     </ion-col>
-                </div>
+                </ion-col>
                 <ion-col>
                     <ion-label>
                         <div class="navBar">
-                            <div class="dropdown bordaSelect">
+                            <div class="dropdown bordaSelect" size="6">
                                 <ion-select (ionChange)="filtroSelecaoCriticidade($event);" class="bordaSelect" placeholder="Todos">
                                     <ion-select-option value="1">Grave</ion-select-option>
                                     <ion-select-option value="2">Médio</ion-select-option>
