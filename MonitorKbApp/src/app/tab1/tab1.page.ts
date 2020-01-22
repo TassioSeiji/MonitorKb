@@ -28,9 +28,6 @@ export class Tab1Page implements OnInit {
   codigoCriticidade: any[];
   dadosFiltradosSelect: any[];
   currentTipoControle = "";
-  bordaSelecionada = "um";
-  bordaAtual: string;
-
 
   constructor(public router: Router, public monitorkbService: MonitorkbService, public alertCtrl: AlertController) { }
 
@@ -67,13 +64,13 @@ export class Tab1Page implements OnInit {
     document.getElementById("lblTotalCriticidadeTotal").innerHTML = this.armazenarCalculoTotalCriticidade.toString();
 
     if (tipoControle === "Produto Contábil") {
-      document.getElementById("MenuProdutoContabil").classList.add('um');      
-      document.getElementById("MenuCobranca").classList.remove('um');
+      document.getElementById("MenuProdutoContabil").classList.add('bordaMenu');      
+      document.getElementById("MenuCobranca").classList.remove('bordaMenu');
     }
     else
     {
-      document.getElementById("MenuCobranca").classList.add('um');      
-      document.getElementById("MenuProdutoContabil").classList.remove('um');
+      document.getElementById("MenuCobranca").classList.add('bordaMenu');      
+      document.getElementById("MenuProdutoContabil").classList.remove('bordaMenu');
     }
 
 
@@ -133,15 +130,6 @@ export class Tab1Page implements OnInit {
         console.log("ACABEI")
       }
     )
-  }
-  bordaHeader(bordaSelecionada) {
-    if (bordaSelecionada === "um") {
-      this.bordaAtual = "um"
-    }
-    if (bordaSelecionada === "dois") {
-      this.bordaAtual = "dois"
-    }
-
   }
 
   reencaminhaCriticidade() {
