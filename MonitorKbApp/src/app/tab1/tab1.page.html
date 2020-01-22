@@ -2,46 +2,41 @@
     <ion-toolbar color="primary" class="toolbarTopo">
         <ion-grid>
             <ion-row>
-                <ion-title class="logoHeader">
+                <ion-title class="logoHeader logoHeaderCentralizada">
                     VIC KB
                 </ion-title>
-                <ion-button fill="clear">
-                    <ion-icon name="create" color="light" class="logoHeaderPrincipal"></ion-icon>
-                </ion-button>
-                <ion-button fill="clear">
-                    <ion-icon name="exit" color="light" class="logoHeaderPrincipal"></ion-icon>
-                </ion-button>
             </ion-row>
         </ion-grid>
     </ion-toolbar>
 </ion-header>
-
 <ion-content color="tertiary">
-    <div class="barraMenuHeader produtoBorda">
-        <ion-grid>
-            <ion-row class="ion-text-center">
-                <ion-col>
-                    <ion-button (click)="produtoContabilComparador('Produto Contábil')" fill="clear">
-                        <ion-text color="secondary">
+    <div>
+        <div class="um">
+            <ion-grid>
+                <ion-row class="ion-text-center">
+                    <ion-col>
+                        <ion-button (click)="produtoContabilComparador('Produto Contábil'); bordaHeader('um')" fill="clear">
+                            <ion-text color="secondary">
 
-                            <a class="txtMenuHeader">Produto Contábil</a>
+                                <a class="txtMenuHeader">Produto Contábil</a>
 
-                        </ion-text>
+                            </ion-text>
 
-                    </ion-button>
-                </ion-col>
-                <ion-col>
-                    <ion-button (click)="produtoContabilComparador('Cobrança')" fill="clear">
-                        <ion-text color="secondary">
+                        </ion-button>
+                    </ion-col>
+                    <ion-col>
+                        <ion-button (click)="produtoContabilComparador('Cobrança'); bordaHeader('dois')" fill="clear">
+                            <ion-text color="secondary">
 
-                            <a class="txtMenuHeader">Cobrança</a>
+                                <a class="txtMenuHeader">Cobrança</a>
 
-                        </ion-text>
+                            </ion-text>
 
-                    </ion-button>
-                </ion-col>
-            </ion-row>
-        </ion-grid>
+                        </ion-button>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </div>
     </div>
     <div class="topoFiltroECriticidade">
         <ion-grid>

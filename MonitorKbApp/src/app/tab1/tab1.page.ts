@@ -21,12 +21,16 @@ export class Tab1Page implements OnInit {
   idCriticidadeMedia = 2;
   idCriticidadeBaixa = 3;
   idCriticidadeTodos = 5;
+  idCriticidadeResolvido= 4;
   armazenarCalculoTotalCriticidade = 0;
   codigoTipoCritica: any[];
   dataReferencia: any[];
   codigoCriticidade: any[];
   dadosFiltradosSelect: any[];
   currentTipoControle = "";
+  bordaSelecionada = "um";
+  bordaAtual: string;
+ 
 
   constructor(public router: Router, public monitorkbService: MonitorkbService, public alertCtrl: AlertController) { }
 
@@ -35,8 +39,7 @@ export class Tab1Page implements OnInit {
   }
 
   carregarDadosDia() {
-      this.monitorkbService.obterDadosDoDia().subscribe(value => {
-      this.dadosDoDia = value.DadosDoDia || [];
+      this.monitorkbService.obterDadosDoDia().subscribe(value => {this.dadosDoDia = value.DadosDoDia || [];
       this.produtoContabilComparador('Produto Contábil');  
     });
   }
@@ -61,7 +64,8 @@ export class Tab1Page implements OnInit {
     document.getElementById("lblTotalCriticidadeBaixa").innerHTML = this.calcularTotalPorCriticidade(this.idCriticidadeBaixa).toString();
     this.armazenarCalculoTotalCriticidade = (this.calcularTotalPorCriticidade(this.idCriticidadeAlta) + this.calcularTotalPorCriticidade(this.idCriticidadeMedia) + this.calcularTotalPorCriticidade(this.idCriticidadeBaixa));
     document.getElementById("lblTotalCriticidadeTotal").innerHTML = this.armazenarCalculoTotalCriticidade.toString();
-  }
+    this.dadosFiltrados = this.dadosFiltrados.filter ((obj) => obj.nCodCriticidade !== this.idCriticidadeResolvido)  
+    }
 
   public async modalBaixaReenviar(dDataRef,nCodTipoCritica,nCodCriticidade){ 
     const alert = await this.alertCtrl.create({
@@ -95,7 +99,9 @@ export class Tab1Page implements OnInit {
   }
 
   async filtroSelecaoCriticidade(selecaoValor){
+   
       this.produtoContabilComparador(this.currentTipoControle);
+     
       if(parseInt(selecaoValor.detail.value) !== this.idCriticidadeTodos){
         this.dadosFiltrados = this.dadosFiltrados.filter((obj) => obj.nCodCriticidade === parseInt(selecaoValor.detail.value))  
       }               
@@ -114,6 +120,16 @@ export class Tab1Page implements OnInit {
       }
     )   
   }
+  bordaHeader(bordaSelecionada) {
+ if(bordaSelecionada === "um"){
+   this.bordaAtual = "um"
+ }
+ if(bordaSelecionada === "dois"){
+  this.bordaAtual = "dois"
+}
+
+  }
+  
  reencaminhaCriticidade(){
   this.monitorkbService.reenviarNotificacao(this.dataReferencia, this.codigoCriticidade, this.codigoTipoCritica).subscribe(
     data => {             

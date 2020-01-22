@@ -1,6 +1,14 @@
-  .produtoBorda {
+  .um {
+      font-weight: bold;
       border-bottom: 3px solid;
-      border-image: linear-gradient(90deg, rgba(120, 120, 120, 1) 0%, rgba(120, 120, 120, 1) 49%, rgba(171, 171, 171, 1) 49%);
+      border-image: linear-gradient(90deg, rgba(120, 120, 120, 1) 0%, rgba(120, 120, 120, 1) 49%);
+      border-image-slice: 1;
+  }
+  
+  .dois {
+      font-weight: bold;
+      border-bottom: 3px solid;
+      border-image: linear-gradient(90deg, rgba(171, 171, 171, 1) 0%, rgba(171, 171, 171, 1) 49%, rgba(120, 120, 120, 1) 49%, rgba(120, 120, 120, 1) 100%);
       border-image-slice: 1;
   }
   
