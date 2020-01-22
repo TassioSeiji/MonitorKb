@@ -21,7 +21,7 @@ export class Tab1Page implements OnInit {
   idCriticidadeMedia = 2;
   idCriticidadeBaixa = 3;
   idCriticidadeTodos = 5;
-  idCriticidadeResolvido= 4;
+  idCriticidadeResolvido = 4;
   armazenarCalculoTotalCriticidade = 0;
   codigoTipoCritica: any[];
   dataReferencia: any[];
@@ -30,7 +30,7 @@ export class Tab1Page implements OnInit {
   currentTipoControle = "";
   bordaSelecionada = "um";
   bordaAtual: string;
- 
+
 
   constructor(public router: Router, public monitorkbService: MonitorkbService, public alertCtrl: AlertController) { }
 
@@ -39,8 +39,9 @@ export class Tab1Page implements OnInit {
   }
 
   carregarDadosDia() {
-      this.monitorkbService.obterDadosDoDia().subscribe(value => {this.dadosDoDia = value.DadosDoDia || [];
-      this.produtoContabilComparador('Produto Contábil');  
+    this.monitorkbService.obterDadosDoDia().subscribe(value => {
+    this.dadosDoDia = value.DadosDoDia || [];
+      this.produtoContabilComparador('Produto Contábil');
     });
   }
 
@@ -52,11 +53,11 @@ export class Tab1Page implements OnInit {
     for (i = 0; i < count.length; i++) {
       total = total + parseInt(count[i].nQtdeOcorrencias);
     }
-    
-    return total;    
+
+    return total;
   }
-  
-   produtoContabilComparador(tipoControle) {
+
+  produtoContabilComparador(tipoControle) {
     this.currentTipoControle = tipoControle;
     this.dadosFiltrados = this.dadosDoDia.filter((obj) => obj.sTipoControle === tipoControle)
     document.getElementById("lblTotalCriticidadeAlta").innerHTML = this.calcularTotalPorCriticidade(this.idCriticidadeAlta).toString();
@@ -64,10 +65,22 @@ export class Tab1Page implements OnInit {
     document.getElementById("lblTotalCriticidadeBaixa").innerHTML = this.calcularTotalPorCriticidade(this.idCriticidadeBaixa).toString();
     this.armazenarCalculoTotalCriticidade = (this.calcularTotalPorCriticidade(this.idCriticidadeAlta) + this.calcularTotalPorCriticidade(this.idCriticidadeMedia) + this.calcularTotalPorCriticidade(this.idCriticidadeBaixa));
     document.getElementById("lblTotalCriticidadeTotal").innerHTML = this.armazenarCalculoTotalCriticidade.toString();
-    this.dadosFiltrados = this.dadosFiltrados.filter ((obj) => obj.nCodCriticidade !== this.idCriticidadeResolvido)  
+
+    if (tipoControle === "Produto Contábil") {
+      document.getElementById("MenuProdutoContabil").classList.add('um');      
+      document.getElementById("MenuCobranca").classList.remove('um');
+    }
+    else
+    {
+      document.getElementById("MenuCobranca").classList.add('um');      
+      document.getElementById("MenuProdutoContabil").classList.remove('um');
     }
 
-  public async modalBaixaReenviar(dDataRef,nCodTipoCritica,nCodCriticidade){ 
+
+    this.dadosFiltrados = this.dadosFiltrados.filter((obj) => obj.nCodCriticidade !== this.idCriticidadeResolvido)
+  }
+
+  public async modalBaixaReenviar(dDataRef, nCodTipoCritica, nCodCriticidade) {
     const alert = await this.alertCtrl.create({
       header: 'O Que Você Deseja',
       buttons: [
@@ -77,7 +90,8 @@ export class Tab1Page implements OnInit {
             this.dataReferencia = dDataRef;
             this.codigoCriticidade = nCodCriticidade;
             this.codigoTipoCritica = nCodTipoCritica
-            console.log(this.baixaCriticidade());}
+            console.log(this.baixaCriticidade());
+          }
         },
         {
           text: 'Reencaminhar',
@@ -95,62 +109,51 @@ export class Tab1Page implements OnInit {
   }
   cobranca() {
     this.router.navigate(['tabs', 'tab2', {
-    }]);  
+    }]);
   }
 
-  async filtroSelecaoCriticidade(selecaoValor){
-   
-      this.produtoContabilComparador(this.currentTipoControle);
-     
-      if(parseInt(selecaoValor.detail.value) !== this.idCriticidadeTodos){
-        this.dadosFiltrados = this.dadosFiltrados.filter((obj) => obj.nCodCriticidade === parseInt(selecaoValor.detail.value))  
-      }               
-  }
+  async filtroSelecaoCriticidade(selecaoValor) {
 
-  btn(getElementById){
-    var i =0;
-    var a = document.getElementsByTagName('produto')
-    for (i = 0; i < a.length; i++) {
-        a[i].classList.remove('um')
+    this.produtoContabilComparador(this.currentTipoControle);
+
+    if (parseInt(selecaoValor.detail.value) !== this.idCriticidadeTodos) {
+      this.dadosFiltrados = this.dadosFiltrados.filter((obj) => obj.nCodCriticidade === parseInt(selecaoValor.detail.value))
     }
-    getElementById.class.add('um');
-}
+  }
 
-
-
-  baixaCriticidade(){
+  baixaCriticidade() {
     this.monitorkbService.baixaCriticidade(this.dataReferencia, this.codigoCriticidade, this.codigoTipoCritica).subscribe(
-      data => {     
+      data => {
         this.carregarDadosDia();
       },
       error => {
-        alert("Não foi possível baixar a criticidade.");        
+        alert("Não foi possível baixar a criticidade.");
       },
-      () => {        
+      () => {
         console.log("ACABEI")
       }
-    )   
+    )
   }
   bordaHeader(bordaSelecionada) {
- if(bordaSelecionada === "um"){
-   this.bordaAtual = "um"
- }
- if(bordaSelecionada === "dois"){
-  this.bordaAtual = "dois"
-}
+    if (bordaSelecionada === "um") {
+      this.bordaAtual = "um"
+    }
+    if (bordaSelecionada === "dois") {
+      this.bordaAtual = "dois"
+    }
 
   }
-  
- reencaminhaCriticidade(){
-  this.monitorkbService.reenviarNotificacao(this.dataReferencia, this.codigoCriticidade, this.codigoTipoCritica).subscribe(
-    data => {             
-    },
-    error => {
-      alert("Não foi possível reenviar.");        
-    },
-    () => {        
-      console.log("ACABEI")
-    }
-  )   
- }       
+
+  reencaminhaCriticidade() {
+    this.monitorkbService.reenviarNotificacao(this.dataReferencia, this.codigoCriticidade, this.codigoTipoCritica).subscribe(
+      data => {
+      },
+      error => {
+        alert("Não foi possível reenviar.");
+      },
+      () => {
+        console.log("ACABEI")
+      }
+    )
+  }
 }

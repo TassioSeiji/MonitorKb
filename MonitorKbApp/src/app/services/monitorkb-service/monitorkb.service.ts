@@ -9,8 +9,6 @@ import { RequestService } from '../request-service/request.service';
 import { UserService } from '../user-service/user.service';
 import { Storage } from '@ionic/storage';
 
-
-
 @Injectable({
   providedIn: 'root'
 })
