@@ -76,8 +76,8 @@
     </div>
     <ion-row>
         <ion-col *ngFor="let item of this.dadosFiltrados" size="6 ">
-            <ion-card id=" " (click)="modalBaixaReenviar(item.dDataRef,item.nCodTipoCritica,item.nCodCriticidade) " class="cardsTela BordaCard{{item.nCodCriticidade}} ">
-                <ion-card-content class="conteudoDoCard background{{item.nCodCriticidade}} ">
+            <ion-card (click)="modalBaixaReenviar(item.dDataRef,item.nCodTipoCritica,item.nCodCriticidade) " class="cardsTela BordaCard{{item.nCodCriticidade}} ">
+                <ion-card-content class="conteudoDoCard background{{item.nCodCriticidade}} ">                  
                     <div class="subTituloRight BordaCard{{item.nCodCriticidade}} ">
                         {{item.nQtdeOcorrencias}}
                     </div>

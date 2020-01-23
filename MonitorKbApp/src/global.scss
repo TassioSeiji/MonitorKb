@@ -218,15 +218,6 @@ p.subTitulo {
     border-bottom: 9px solid;
 }
 
-.cardCobranca {
-    border: 2px solid #30BF88;
-    border-radius: 15px;
-}
-
-.conteudoDoCardVerde {
-    color: #30BF88;
-}
-
 .tituloDoCard {
     font-size: 20px;
     padding-left: 9%;
@@ -247,95 +238,8 @@ p.subTitulo {
     background-color: #EFF3F6;
 }
 
-.corCardVerde {
-    color: #30BF88;
-}
-
 // CSS DA TAB3 FORMULÁRIO ---------------------------------------------------------------- COM SUAS CORES //
-.informacoesMenuForm {
-    padding-top: 6%;
-    font-weight: bold;
-    padding-bottom: 5%;
-    font-size: 21px;
-    padding-left: 4%;
-}
 
-.formulario {
-    margin-left: 34px;
-    margin-right: 34px;
-    border: 1px solid #C6C6C6;
-    background: white;
-    border-radius: 9px;
-    padding-top: 4px;
-    padding-bottom: 8px;
-}
-
-.itensForm {
-    border: solid 1px #707070;
-    margin-top: 15px;
-    margin-bottom: 16px;
-    margin-left: 23px;
-    margin-right: 23px;
-    height: 35px;
-    border-radius: 9px;
-}
-
-.inputForm {
-    padding-bottom: 14px;
-    color: #707070;
-}
-
-.nomeItem {
-    color: #555B69;
-    margin-left: 28px;
-}
-
-.jaEncaminhado {
-    display: none;
-    top: 16px;
-    position: absolute;
-    font-size: 12px;
-    left: 17px;
-}
-
-.itemDescricao {
-    height: 135px;
-}
-
-.espacoItens {
-    margin-top: 18px;
-}
-
-.textAreaForm {
-    width: 266px;
-    height: 105px;
-}
-
-.btnSalvar {
-    background: transparent;
-    color: #4D5467;
-    border: solid 2px #4D5467;
-    border-radius: 52px;
-    width: 35%;
-    font-weight: 600;
-}
-
-.espacoBtnSalvar {
-    text-align: center;
-}
-
-.textBtnSalvar {
-    color: #4D5467;
-    padding-right: 13px;
-    text-transform: none;
-    padding-right: 11px;
-}
-
-.iconeBtnSalvar {
-    color: #4D5467;
-    font-size: 20px;
-    padding-left: 5px;
-}
 
 // DROPDOWN ------------------------------------------------------------ //
 .navBar {
