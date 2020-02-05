@@ -41,8 +41,7 @@
 }
 
 .headerPrincipal {
-    background-color: #4D5467;
-    height: 11%;
+    background-color: #4D5467;    
 }
 
 .conteudoPage {
@@ -75,13 +74,12 @@
 
 .logoHeader {
     text-align: center;
-    margin-left: 22px;
-    margin-right: 145px;
-    padding: 11px;
+    padding: 17px;
     border: 1.7px solid;
-    border-radius: 65px;
-    margin-top: 10px;
-    margin-bottom: -5px;
+    border-radius: 65px;    
+    height: 80%;
+    margin-top: 1%;
+    width: 60%;
 }
 
 .logoHeaderCentralizada {
@@ -350,8 +348,7 @@ p.subTitulo {
     border-radius: 33px;
 }
 
-.dropdown {
-    width: 135px;
+.dropdown {    
     float: left;
     overflow: hidden;
 }

@@ -1,6 +1,6 @@
 <ion-content padding>
   <ion-row>
-    <ion-button (click)="closeModal()" fill="clear" class="close-btn" no-padding>
+    <ion-button fill="clear" class="close-btn" no-padding>
       <ion-icon name="arrow-back"></ion-icon>
     </ion-button>
   </ion-row>
@@ -10,7 +10,7 @@
       <!-- <img src="../assets/votorantim.jpg" /> -->
     </div>
 
-    <form [formGroup]="loginForm" (submit)="login()" class="login-form" padding>
+    <!-- <form [formGroup]="loginForm" (submit)="login()" class="login-form" padding>
       <ion-row>        
           <mat-form-field appearance="outline">
             <mat-label>E-mail</mat-label>
@@ -33,7 +33,7 @@
           (keyup.enter)="login()">
           Entrar</ion-button>        
       </div>
-    </form>
+    </form> -->
     <!-- 
     <div  padding class="ion-text-center">
       <re-captcha (resolved)="captchaResolved($event)" siteKey="{{captchaSiteKey}}"></re-captcha>
