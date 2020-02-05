@@ -21,7 +21,6 @@ export class Tab1Page implements OnInit {
   idCriticidadeMedia = 2;
   idCriticidadeBaixa = 3;
   idCriticidadeTodos = 5;
-  idCriticidadeResolvido = 4;
   armazenarCalculoTotalCriticidade = 0;
   codigoTipoCritica: any[];
   dataReferencia: any[];
@@ -57,12 +56,13 @@ export class Tab1Page implements OnInit {
   produtoContabilComparador(tipoControle) {
     this.currentTipoControle = tipoControle;
     this.dadosFiltrados = this.dadosDoDia.filter((obj) => obj.sTipoControle === tipoControle)
+   
     document.getElementById("lblTotalCriticidadeAlta").innerHTML = this.calcularTotalPorCriticidade(this.idCriticidadeAlta).toString();
     document.getElementById("lblTotalCriticidadeMedia").innerHTML = this.calcularTotalPorCriticidade(this.idCriticidadeMedia).toString();
     document.getElementById("lblTotalCriticidadeBaixa").innerHTML = this.calcularTotalPorCriticidade(this.idCriticidadeBaixa).toString();
     this.armazenarCalculoTotalCriticidade = (this.calcularTotalPorCriticidade(this.idCriticidadeAlta) + this.calcularTotalPorCriticidade(this.idCriticidadeMedia) + this.calcularTotalPorCriticidade(this.idCriticidadeBaixa));
     document.getElementById("lblTotalCriticidadeTotal").innerHTML = this.armazenarCalculoTotalCriticidade.toString();
-
+    
     if (tipoControle === "Produto Contábil") {
       document.getElementById("MenuProdutoContabil").classList.add('bordaMenu');      
       document.getElementById("MenuCobranca").classList.remove('bordaMenu');
@@ -72,11 +72,12 @@ export class Tab1Page implements OnInit {
       document.getElementById("MenuCobranca").classList.add('bordaMenu');      
       document.getElementById("MenuProdutoContabil").classList.remove('bordaMenu');
     }
-
-
-    this.dadosFiltrados = this.dadosFiltrados.filter((obj) => obj.nCodCriticidade !== this.idCriticidadeResolvido)
+    
+    //JA ENCAMINHADO
+    
+  
   }
-
+  
   public async modalBaixaReenviar(dDataRef, nCodTipoCritica, nCodCriticidade) {
     const alert = await this.alertCtrl.create({
       header: 'O Que Você Deseja',
@@ -133,13 +134,19 @@ export class Tab1Page implements OnInit {
   }
 
   reencaminhaCriticidade() {
+   
     this.monitorkbService.reenviarNotificacao(this.dataReferencia, this.codigoCriticidade, this.codigoTipoCritica).subscribe(
+      
       data => {
+        this.carregarDadosDia();
       },
       error => {
         alert("Não foi possível reenviar.");
       },
       () => {
+     
+
+
         console.log("ACABEI")
       }
     )
