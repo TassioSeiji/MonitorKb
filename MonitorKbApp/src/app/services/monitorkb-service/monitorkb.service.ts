@@ -18,6 +18,10 @@ export class MonitorkbService {
     public storage: Storage, public tokenService: TokenService,
     public requestService: RequestService, public userService: UserService) { }
 
+    obterFechamentos(){
+      return this.requestService.get(`monitorKb/obterFechamentos`);
+    }
+
     obterDadosDoDia() {
       return this.requestService.get(`monitorKb/obterDadosDoDia`);
     }
@@ -43,5 +47,15 @@ export class MonitorkbService {
       }
 
       return this.requestService.post(`monitorKb/reenviarNotificacao`, body);      
+    }
+    
+    bloquearFechamentos(dataCompetencia,dataInicio,dataFim){
+      let body = {
+        "dataCompetencia" : new Date(dataCompetencia),
+        "dataInicio" : new Date(dataInicio),
+        "dataFim" : new Date(dataFim)
+      }
+
+      return this.requestService.post(`monitorKb/bloquearFechamento`, body);      
     }
 } 

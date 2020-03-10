@@ -1,0 +1,64 @@
+<ion-header class="headerPrincipal">
+    <ion-toolbar color="primary" class="toolbarTopo">
+        <ion-grid>
+            <ion-row>
+                <ion-title class="logoHeader logoHeaderCentralizada">
+                    VIC KB
+                </ion-title>
+            </ion-row>
+        </ion-grid>
+    </ion-toolbar>
+</ion-header>
+<ion-content color="tertiary">
+
+    <ion-grid>
+        <ion-row class="ion-text-center">
+            <ion-col size="4">
+                <ion-button (click)="voltarMenu()" fill="clear">
+                    <ion-text color="secondary">
+                        <a class="txtMenuHeader">Produto Contábil</a>
+                    </ion-text>
+                </ion-button>
+            </ion-col>
+            <ion-col size="4">
+                <ion-button (click)="voltarMenu()" fill="clear">
+                    <ion-text color="secondary">
+                        <a class="txtMenuHeader">Cobrança</a>
+                    </ion-text>
+                </ion-button>
+            </ion-col>
+            <ion-col class="bordaMenu" size="4">
+                <ion-button (click)="fechamentoAbrir()" fill="clear">
+                    <ion-text color="secondary">
+                        <a class="txtMenuHeader">Fechamento</a>
+                    </ion-text>
+                </ion-button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <ion-grid>
+        <ion-row>
+            <ion-col *ngFor="let item of this.fechamentos" size="6">
+                <ion-card class="cardsFechamento bordaFechamento">
+                    <ion-card-content class="conteudoDoCardFechamento corCardFechamento">
+                        <p class="nomeProcesso ">{{item.sNomeFechamento}}</p>
+                        <br/>
+                        <p class="dataProcesso">Datas</p>
+                        <br/>
+                        <p class="dataProcesso ">Inicio: {{item.dInicio | date:'dd/MM/yyyy'}}</p>
+                        <br/>
+                        <p class="dataProcesso ">Fim: {{item.dFim | date:'dd/MM/yyyy'}}</p>
+                        <br/>
+                        <p class="statusProcesso ">Status: {{item.sStatus}}</p>
+                        <br/>
+                        <div class="btnAlinhar">
+                            <ion-button (click)="modalFechamento(item.dCompetencia,item.dInicio,item.dFim)" class="buttonBloquear" fill="clear">
+                                <p class="textoBloquear"> Bloquear </p>
+                            </ion-button>
+                        </div>
+                    </ion-card-content>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

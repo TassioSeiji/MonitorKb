@@ -80,7 +80,7 @@ export class Tab1Page implements OnInit {
   
   public async modalBaixaReenviar(dDataRef, nCodTipoCritica, nCodCriticidade) {
     const alert = await this.alertCtrl.create({
-      header: 'O Que Você Deseja',
+      header: 'O Que Você Deseja ?',
       buttons: [
         {
           text: 'Baixar',
@@ -109,6 +109,11 @@ export class Tab1Page implements OnInit {
     this.router.navigate(['tabs', 'tab2', {
     }]);
   }
+  fechamentoAbrir() {
+    this.router.navigate(['fechamento', {
+    }]);
+  }
+
 
   async filtroSelecaoCriticidade(selecaoValor) {
 

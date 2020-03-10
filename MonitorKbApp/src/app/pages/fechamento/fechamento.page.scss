@@ -1,0 +1,44 @@
+.bordaMenu {
+    font-weight: bold;
+    border-bottom: 3px solid;
+    border-image: linear-gradient(90deg, rgba(120, 120, 120, 1) 0%, rgba(120, 120, 120, 1) 49%);
+    border-image-slice: 1;
+}
+
+.nomeProcesso {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.dataProcesso {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.statusProcesso {
+    font-size: 15px;
+}
+
+.buttonBloquear {
+    border: solid #fff 1px;
+    border-radius: 70px;
+}
+
+.textoBloquear {
+    color: white;
+}
+
+.conteudoDoCardFechamento {
+    color: white;
+    min-height: 300px;
+}
+
+.cardsFechamento {
+    border: 0px solid;
+    border-radius: 15px;
+    border-bottom: 9px solid;
+}
+
+.corCardFechamento {
+    background-color: black;
+}
