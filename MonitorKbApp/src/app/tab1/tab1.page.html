@@ -5,7 +5,8 @@
                 VIC KB
             </ion-title>
         </ion-row>
-    </ion-toolbar></ion-header>
+    </ion-toolbar>
+</ion-header>
 <ion-content color="tertiary">
     <div>
         <div>
@@ -70,8 +71,7 @@
                     <ion-label>
                         <div class="navBar">
                             <div class="dropdown bordaSelect" size="6">
-                                <ion-select (ionChange)="filtroSelecaoCriticidade($event);" class="bordaSelect"
-                                    placeholder="Todos">
+                                <ion-select (ionChange)="filtroSelecaoCriticidade($event);" class="bordaSelect" placeholder="Todos">
                                     <ion-select-option value="1">Grave</ion-select-option>
                                     <ion-select-option value="2">Médio</ion-select-option>
                                     <ion-select-option value="3">Fraco</ion-select-option>
@@ -86,13 +86,7 @@
     </div>
     <ion-row>
         <ion-col *ngFor="let item of this.dadosFiltrados" size="6 ">
-<<<<<<< HEAD
             <ion-card (click)="modalBaixaReenviar(item.dDataRef,item.nCodTipoCritica,item.nCodCriticidade) " class="cardsTela BordaCard{{item.nCodCriticidade}} ">
-=======
-
-            <ion-card id=" " (click)="modalBaixaReenviar(item.dDataRef,item.nCodTipoCritica,item.nCodCriticidade) "
-                class="cardsTela BordaCard{{item.nCodCriticidade}} ">
->>>>>>> e18ee88e3806676349ad08dc4b2e273605a54b4b
                 <ion-card-content class="conteudoDoCard background{{item.nCodCriticidade}} ">
                     <div class="subTituloRight BordaCard{{item.nCodCriticidade}} ">
                         {{item.nQtdeOcorrencias}}
