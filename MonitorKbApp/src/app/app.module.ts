@@ -14,6 +14,7 @@ import { ModalService } from './services/modal-service/modal.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AppService } from './services/app-services/app.service';
+import { OneSignal } from '@ionic-native/onesignal/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -31,7 +32,8 @@ import { AppService } from './services/app-services/app.service';
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     StorageService,
     AppService,
-    ModalService  
+    ModalService,
+    OneSignal 
   ],
   bootstrap: [AppComponent]
 })
