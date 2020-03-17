@@ -18,8 +18,8 @@ export class MonitorkbService {
     public storage: Storage, public tokenService: TokenService,
     public requestService: RequestService, public userService: UserService) { }
 
-    obterFechamentos(){
-      return this.requestService.get(`monitorKb/obterFechamentos`);
+    obterFechamento(){
+      return this.requestService.get(`monitorKb/obterFechamento`);
     }
 
     obterDadosDoDia() {

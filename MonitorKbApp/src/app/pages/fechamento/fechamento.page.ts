@@ -31,7 +31,7 @@ export class FechamentoPage implements OnInit {
     }]);
   }
   carregarFechamentos() {
-    this.monitorkbService.obterFechamentos().subscribe(value => {
+    this.monitorkbService.obterFechamento().subscribe(value => {
     this.fechamentos = value.Fechamentos || [];
 
     });
