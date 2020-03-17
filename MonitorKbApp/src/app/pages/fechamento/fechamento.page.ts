@@ -71,7 +71,7 @@ export class FechamentoPage implements OnInit {
         alert("Não foi possível bloquear o fechamento");
       },
       () => {
-        console.log("")
+        console.log(" ")
       }
     )
   }
