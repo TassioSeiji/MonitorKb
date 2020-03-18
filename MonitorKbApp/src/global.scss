@@ -41,7 +41,7 @@
 }
 
 .headerPrincipal {
-    background-color: #4D5467;    
+    background-color: #4D5467;
 }
 
 .conteudoPage {
@@ -76,10 +76,13 @@
     text-align: center;
     padding: 17px;
     border: 1.7px solid;
-    border-radius: 65px;    
+    border-radius: 65px;
     height: 80%;
     margin-top: 1%;
     width: 60%;
+    margin-left: 131px;
+    margin-right: 131px;
+    font-size: 22px;
 }
 
 .logoHeaderCentralizada {
@@ -148,7 +151,7 @@
 
 .conteudoDoCard {
     color: white;
-    min-height: 200px;
+    min-height: 300px;
 }
 
 .tituloDoCard {
@@ -250,7 +253,7 @@ p.subTitulo {
     border-radius: 33px;
 }
 
-.dropdown {    
+.dropdown {
     float: left;
     overflow: hidden;
 }

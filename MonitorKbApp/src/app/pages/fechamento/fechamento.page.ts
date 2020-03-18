@@ -15,7 +15,7 @@ export class FechamentoPage implements OnInit {
   dataCompetencia: any;
   dataInicio: any;
   dataFim: any;
-
+  sNome: any;
   constructor(public router: Router, public monitorkbService: MonitorkbService, public alertCtrl: AlertController) { }
 
   ngOnInit() {
@@ -37,12 +37,14 @@ export class FechamentoPage implements OnInit {
     });
 
   }
-  public async modalFechamento(dCompetencia, dInicio, dFim) {
+  public async modalFechamento(dCompetencia, dInicio, dFim,sNomeFechamento) {
+
+    this.sNome = sNomeFechamento;
     const alert = await this.alertCtrl.create({
-      header: 'O Que Você Deseja ?',
+      header: 'Deseja Bloquear o Processo ' + this.sNome,
       buttons: [
         {
-          text: 'Bloquear',
+          text: 'Sim',
           handler: () => {
            this.dataCompetencia = dCompetencia;
            this.dataInicio = dInicio;
@@ -51,7 +53,7 @@ export class FechamentoPage implements OnInit {
           }
         },
         {
-          text: 'Sair',
+          text: 'Não',
           handler: () => {
             this.alertCtrl.dismiss()
             
