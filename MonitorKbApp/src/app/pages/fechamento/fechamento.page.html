@@ -41,15 +41,13 @@
             <ion-col *ngFor="let item of this.fechamentos" size="6">
                 <ion-card class="cardsFechamento bordaFechamento BordaCard3">
                     <ion-card-content class="conteudoDoCardFechamento corCardFechamento">
-                        <p class="nomeProcesso ">{{item.sNomeFechamento}}</p>
+                        <p class="nomeProcesso "><strong>{{item.sNomeFechamento}}</strong></p>
                         <br/>
-                        <p class="dataProcesso">Datas</p>
+                        <p class="dataProcesso "><strong>Inicio</strong>: {{item.dInicio | date:'dd/MM/yyyy'}}</p>
                         <br/>
-                        <p class="dataProcesso ">Inicio: {{item.dInicio | date:'dd/MM/yyyy'}}</p>
+                        <p class="dataProcesso "><strong>Fim</strong>: {{item.dFim | date:'dd/MM/yyyy'}}</p>
                         <br/>
-                        <p class="dataProcesso ">Fim: {{item.dFim | date:'dd/MM/yyyy'}}</p>
-                        <br/>
-                        <p class="statusProcesso ">Status: {{item.sStatus}}</p>
+                        <p class="statusProcesso "><strong>Status</strong>: {{item.sStatus}}</p>
                         <br/>
                         <div class="btnAlinhar">
                             <ion-button (click)="modalFechamento(item.dCompetencia,item.dInicio,item.dFim,item.sNomeFechamento)" class="buttonBloquear" fill="clear">
