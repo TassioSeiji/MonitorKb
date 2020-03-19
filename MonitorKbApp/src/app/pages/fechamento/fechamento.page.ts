@@ -10,12 +10,17 @@ import { getLocaleDateFormat } from '@angular/common';
   styleUrls: ['./fechamento.page.scss'],
 })
 export class FechamentoPage implements OnInit {
-
+  fechamentoBloqueado = '';
   fechamentos = [];
   dataCompetencia: any;
   dataInicio: any;
   dataFim: any;
   sNome: any;
+  styles = {
+    backgroundColor : "#fff",
+    fontWeight: "600px"
+  };
+ 
   constructor(public router: Router, public monitorkbService: MonitorkbService, public alertCtrl: AlertController) { }
 
   ngOnInit() {
@@ -33,15 +38,16 @@ export class FechamentoPage implements OnInit {
   carregarFechamentos() {
     this.monitorkbService.obterFechamento().subscribe(value => {
     this.fechamentos = value.Fechamentos || [];
-
+     
     });
 
   }
+  
   public async modalFechamento(dCompetencia, dInicio, dFim,sNomeFechamento) {
 
     this.sNome = sNomeFechamento;
     const alert = await this.alertCtrl.create({
-      header: 'Deseja Bloquear o Processo ' + this.sNome,
+      header: 'Deseja Bloquear o Processo ' + this.sNome +  '?', 
       buttons: [
         {
           text: 'Sim',
@@ -64,6 +70,7 @@ export class FechamentoPage implements OnInit {
     });
     await alert.present();
   }
+
   bloquearFechamento(){
     this.monitorkbService.bloquearFechamentos(this.dataCompetencia, this.dataInicio, this.dataFim).subscribe(
       data => {

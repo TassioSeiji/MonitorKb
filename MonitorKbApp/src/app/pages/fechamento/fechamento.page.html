@@ -49,6 +49,8 @@
                         <br/>
                         <p class="statusProcesso "><strong>Status</strong>: {{item.sStatus}}</p>
                         <br/>
+                        <p class="statusProcesso "><strong>Processo Bloqueado</strong>: {{item.bFechamentoBloqueado?'Sim':'Não'}}</p>
+                        <br/>
                         <div class="btnAlinhar">
                             <ion-button (click)="modalFechamento(item.dCompetencia,item.dInicio,item.dFim,item.sNomeFechamento)" class="buttonBloquear" fill="clear">
                                 <p class="textoBloquear"> Bloquear </p>
