@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  env: "DEV"
+  env: "PROD"
 };
 
 export const IsTotem = false;
@@ -21,7 +21,7 @@ export const genericUser = {
 };
 
 // DEV
-export const url = "https://localhost:44338/api/";
+export const url = "https://apimonitorkb.tecnologiaunica.com.br/api/";
 export const captchaSiteKey = '6LdrRyQTAAAAAKING9LzsKTyKUZk1-Demo1StFiZ';
 
 
